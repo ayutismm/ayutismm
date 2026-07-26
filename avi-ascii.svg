@@ -1,0 +1,548 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1000 686" width="1000" height="686" xml:space="preserve">
+  <style>
+    text { fill: #888; font-family: 'DejaVu Sans Mono', 'Courier New', monospace; font-size: 12px; white-space: pre; }
+  </style>
+  <rect width="100%" height="100%" fill="#fff" />
+  <defs>
+  <clipPath id="clip-0">
+    <rect x="0" y="0" width="0" height="14">
+      <animate attributeName="width" from="0" to="1000" dur="0.75s" begin="0.0s" fill="freeze" />
+    </rect>
+  </clipPath>
+  <clipPath id="clip-1">
+    <rect x="0" y="14" width="0" height="14">
+      <animate attributeName="width" from="0" to="1000" dur="0.75s" begin="0.06s" fill="freeze" />
+    </rect>
+  </clipPath>
+  <clipPath id="clip-2">
+    <rect x="0" y="28" width="0" height="14">
+      <animate attributeName="width" from="0" to="1000" dur="0.75s" begin="0.12s" fill="freeze" />
+    </rect>
+  </clipPath>
+  <clipPath id="clip-3">
+    <rect x="0" y="42" width="0" height="14">
+      <animate attributeName="width" from="0" to="1000" dur="0.75s" begin="0.18s" fill="freeze" />
+    </rect>
+  </clipPath>
+  <clipPath id="clip-4">
+    <rect x="0" y="56" width="0" height="14">
+      <animate attributeName="width" from="0" to="1000" dur="0.75s" begin="0.24s" fill="freeze" />
+    </rect>
+  </clipPath>
+  <clipPath id="clip-5">
+    <rect x="0" y="70" width="0" height="14">
+      <animate attributeName="width" from="0" to="1000" dur="0.75s" begin="0.3s" fill="freeze" />
+    </rect>
+  </clipPath>
+  <clipPath id="clip-6">
+    <rect x="0" y="84" width="0" height="14">
+      <animate attributeName="width" from="0" to="1000" dur="0.75s" begin="0.36s" fill="freeze" />
+    </rect>
+  </clipPath>
+  <clipPath id="clip-7">
+    <rect x="0" y="98" width="0" height="14">
+      <animate attributeName="width" from="0" to="1000" dur="0.75s" begin="0.42s" fill="freeze" />
+    </rect>
+  </clipPath>
+  <clipPath id="clip-8">
+    <rect x="0" y="112" width="0" height="14">
+      <animate attributeName="width" from="0" to="1000" dur="0.75s" begin="0.48s" fill="freeze" />
+    </rect>
+  </clipPath>
+  <clipPath id="clip-9">
+    <rect x="0" y="126" width="0" height="14">
+      <animate attributeName="width" from="0" to="1000" dur="0.75s" begin="0.54s" fill="freeze" />
+    </rect>
+  </clipPath>
+  <clipPath id="clip-10">
+    <rect x="0" y="140" width="0" height="14">
+      <animate attributeName="width" from="0" to="1000" dur="0.75s" begin="0.6s" fill="freeze" />
+    </rect>
+  </clipPath>
+  <clipPath id="clip-11">
+    <rect x="0" y="154" width="0" height="14">
+      <animate attributeName="width" from="0" to="1000" dur="0.75s" begin="0.6599999999999999s" fill="freeze" />
+    </rect>
+  </clipPath>
+  <clipPath id="clip-12">
+    <rect x="0" y="168" width="0" height="14">
+      <animate attributeName="width" from="0" to="1000" dur="0.75s" begin="0.72s" fill="freeze" />
+    </rect>
+  </clipPath>
+  <clipPath id="clip-13">
+    <rect x="0" y="182" width="0" height="14">
+      <animate attributeName="width" from="0" to="1000" dur="0.75s" begin="0.78s" fill="freeze" />
+    </rect>
+  </clipPath>
+  <clipPath id="clip-14">
+    <rect x="0" y="196" width="0" height="14">
+      <animate attributeName="width" from="0" to="1000" dur="0.75s" begin="0.84s" fill="freeze" />
+    </rect>
+  </clipPath>
+  <clipPath id="clip-15">
+    <rect x="0" y="210" width="0" height="14">
+      <animate attributeName="width" from="0" to="1000" dur="0.75s" begin="0.8999999999999999s" fill="freeze" />
+    </rect>
+  </clipPath>
+  <clipPath id="clip-16">
+    <rect x="0" y="224" width="0" height="14">
+      <animate attributeName="width" from="0" to="1000" dur="0.75s" begin="0.96s" fill="freeze" />
+    </rect>
+  </clipPath>
+  <clipPath id="clip-17">
+    <rect x="0" y="238" width="0" height="14">
+      <animate attributeName="width" from="0" to="1000" dur="0.75s" begin="1.02s" fill="freeze" />
+    </rect>
+  </clipPath>
+  <clipPath id="clip-18">
+    <rect x="0" y="252" width="0" height="14">
+      <animate attributeName="width" from="0" to="1000" dur="0.75s" begin="1.08s" fill="freeze" />
+    </rect>
+  </clipPath>
+  <clipPath id="clip-19">
+    <rect x="0" y="266" width="0" height="14">
+      <animate attributeName="width" from="0" to="1000" dur="0.75s" begin="1.14s" fill="freeze" />
+    </rect>
+  </clipPath>
+  <clipPath id="clip-20">
+    <rect x="0" y="280" width="0" height="14">
+      <animate attributeName="width" from="0" to="1000" dur="0.75s" begin="1.2s" fill="freeze" />
+    </rect>
+  </clipPath>
+  <clipPath id="clip-21">
+    <rect x="0" y="294" width="0" height="14">
+      <animate attributeName="width" from="0" to="1000" dur="0.75s" begin="1.26s" fill="freeze" />
+    </rect>
+  </clipPath>
+  <clipPath id="clip-22">
+    <rect x="0" y="308" width="0" height="14">
+      <animate attributeName="width" from="0" to="1000" dur="0.75s" begin="1.3199999999999998s" fill="freeze" />
+    </rect>
+  </clipPath>
+  <clipPath id="clip-23">
+    <rect x="0" y="322" width="0" height="14">
+      <animate attributeName="width" from="0" to="1000" dur="0.75s" begin="1.38s" fill="freeze" />
+    </rect>
+  </clipPath>
+  <clipPath id="clip-24">
+    <rect x="0" y="336" width="0" height="14">
+      <animate attributeName="width" from="0" to="1000" dur="0.75s" begin="1.44s" fill="freeze" />
+    </rect>
+  </clipPath>
+  <clipPath id="clip-25">
+    <rect x="0" y="350" width="0" height="14">
+      <animate attributeName="width" from="0" to="1000" dur="0.75s" begin="1.5s" fill="freeze" />
+    </rect>
+  </clipPath>
+  <clipPath id="clip-26">
+    <rect x="0" y="364" width="0" height="14">
+      <animate attributeName="width" from="0" to="1000" dur="0.75s" begin="1.56s" fill="freeze" />
+    </rect>
+  </clipPath>
+  <clipPath id="clip-27">
+    <rect x="0" y="378" width="0" height="14">
+      <animate attributeName="width" from="0" to="1000" dur="0.75s" begin="1.6199999999999999s" fill="freeze" />
+    </rect>
+  </clipPath>
+  <clipPath id="clip-28">
+    <rect x="0" y="392" width="0" height="14">
+      <animate attributeName="width" from="0" to="1000" dur="0.75s" begin="1.68s" fill="freeze" />
+    </rect>
+  </clipPath>
+  <clipPath id="clip-29">
+    <rect x="0" y="406" width="0" height="14">
+      <animate attributeName="width" from="0" to="1000" dur="0.75s" begin="1.74s" fill="freeze" />
+    </rect>
+  </clipPath>
+  <clipPath id="clip-30">
+    <rect x="0" y="420" width="0" height="14">
+      <animate attributeName="width" from="0" to="1000" dur="0.75s" begin="1.7999999999999998s" fill="freeze" />
+    </rect>
+  </clipPath>
+  <clipPath id="clip-31">
+    <rect x="0" y="434" width="0" height="14">
+      <animate attributeName="width" from="0" to="1000" dur="0.75s" begin="1.8599999999999999s" fill="freeze" />
+    </rect>
+  </clipPath>
+  <clipPath id="clip-32">
+    <rect x="0" y="448" width="0" height="14">
+      <animate attributeName="width" from="0" to="1000" dur="0.75s" begin="1.92s" fill="freeze" />
+    </rect>
+  </clipPath>
+  <clipPath id="clip-33">
+    <rect x="0" y="462" width="0" height="14">
+      <animate attributeName="width" from="0" to="1000" dur="0.75s" begin="1.98s" fill="freeze" />
+    </rect>
+  </clipPath>
+  <clipPath id="clip-34">
+    <rect x="0" y="476" width="0" height="14">
+      <animate attributeName="width" from="0" to="1000" dur="0.75s" begin="2.04s" fill="freeze" />
+    </rect>
+  </clipPath>
+  <clipPath id="clip-35">
+    <rect x="0" y="490" width="0" height="14">
+      <animate attributeName="width" from="0" to="1000" dur="0.75s" begin="2.1s" fill="freeze" />
+    </rect>
+  </clipPath>
+  <clipPath id="clip-36">
+    <rect x="0" y="504" width="0" height="14">
+      <animate attributeName="width" from="0" to="1000" dur="0.75s" begin="2.16s" fill="freeze" />
+    </rect>
+  </clipPath>
+  <clipPath id="clip-37">
+    <rect x="0" y="518" width="0" height="14">
+      <animate attributeName="width" from="0" to="1000" dur="0.75s" begin="2.2199999999999998s" fill="freeze" />
+    </rect>
+  </clipPath>
+  <clipPath id="clip-38">
+    <rect x="0" y="532" width="0" height="14">
+      <animate attributeName="width" from="0" to="1000" dur="0.75s" begin="2.28s" fill="freeze" />
+    </rect>
+  </clipPath>
+  <clipPath id="clip-39">
+    <rect x="0" y="546" width="0" height="14">
+      <animate attributeName="width" from="0" to="1000" dur="0.75s" begin="2.34s" fill="freeze" />
+    </rect>
+  </clipPath>
+  <clipPath id="clip-40">
+    <rect x="0" y="560" width="0" height="14">
+      <animate attributeName="width" from="0" to="1000" dur="0.75s" begin="2.4s" fill="freeze" />
+    </rect>
+  </clipPath>
+  <clipPath id="clip-41">
+    <rect x="0" y="574" width="0" height="14">
+      <animate attributeName="width" from="0" to="1000" dur="0.75s" begin="2.46s" fill="freeze" />
+    </rect>
+  </clipPath>
+  <clipPath id="clip-42">
+    <rect x="0" y="588" width="0" height="14">
+      <animate attributeName="width" from="0" to="1000" dur="0.75s" begin="2.52s" fill="freeze" />
+    </rect>
+  </clipPath>
+  <clipPath id="clip-43">
+    <rect x="0" y="602" width="0" height="14">
+      <animate attributeName="width" from="0" to="1000" dur="0.75s" begin="2.58s" fill="freeze" />
+    </rect>
+  </clipPath>
+  <clipPath id="clip-44">
+    <rect x="0" y="616" width="0" height="14">
+      <animate attributeName="width" from="0" to="1000" dur="0.75s" begin="2.6399999999999997s" fill="freeze" />
+    </rect>
+  </clipPath>
+  <clipPath id="clip-45">
+    <rect x="0" y="630" width="0" height="14">
+      <animate attributeName="width" from="0" to="1000" dur="0.75s" begin="2.6999999999999997s" fill="freeze" />
+    </rect>
+  </clipPath>
+  <clipPath id="clip-46">
+    <rect x="0" y="644" width="0" height="14">
+      <animate attributeName="width" from="0" to="1000" dur="0.75s" begin="2.76s" fill="freeze" />
+    </rect>
+  </clipPath>
+  <clipPath id="clip-47">
+    <rect x="0" y="658" width="0" height="14">
+      <animate attributeName="width" from="0" to="1000" dur="0.75s" begin="2.82s" fill="freeze" />
+    </rect>
+  </clipPath>
+  <clipPath id="clip-48">
+    <rect x="0" y="672" width="0" height="14">
+      <animate attributeName="width" from="0" to="1000" dur="0.75s" begin="2.88s" fill="freeze" />
+    </rect>
+  </clipPath>
+  </defs>
+  <g clip-path="url(#clip-0)">
+    <text x="0" y="0" xml:space="preserve" dominant-baseline="text-before-edge">                                                                                                    </text>
+    <rect x="0" y="0" width="6" height="14" fill="#777" opacity="0.9">
+      <animate attributeName="x" from="0" to="1000" dur="0.75s" begin="0.0s" fill="freeze" />
+    </rect>
+  </g>
+  <g clip-path="url(#clip-1)">
+    <text x="0" y="14" xml:space="preserve" dominant-baseline="text-before-edge">                                                                                                    </text>
+    <rect x="0" y="14" width="6" height="14" fill="#777" opacity="0.9">
+      <animate attributeName="x" from="0" to="1000" dur="0.75s" begin="0.06s" fill="freeze" />
+    </rect>
+  </g>
+  <g clip-path="url(#clip-2)">
+    <text x="0" y="28" xml:space="preserve" dominant-baseline="text-before-edge">                                                                                                    </text>
+    <rect x="0" y="28" width="6" height="14" fill="#777" opacity="0.9">
+      <animate attributeName="x" from="0" to="1000" dur="0.75s" begin="0.12s" fill="freeze" />
+    </rect>
+  </g>
+  <g clip-path="url(#clip-3)">
+    <text x="0" y="42" xml:space="preserve" dominant-baseline="text-before-edge">                                                                                                    </text>
+    <rect x="0" y="42" width="6" height="14" fill="#777" opacity="0.9">
+      <animate attributeName="x" from="0" to="1000" dur="0.75s" begin="0.18s" fill="freeze" />
+    </rect>
+  </g>
+  <g clip-path="url(#clip-4)">
+    <text x="0" y="56" xml:space="preserve" dominant-baseline="text-before-edge">                                                                                                    </text>
+    <rect x="0" y="56" width="6" height="14" fill="#777" opacity="0.9">
+      <animate attributeName="x" from="0" to="1000" dur="0.75s" begin="0.24s" fill="freeze" />
+    </rect>
+  </g>
+  <g clip-path="url(#clip-5)">
+    <text x="0" y="70" xml:space="preserve" dominant-baseline="text-before-edge">                                                                                                    </text>
+    <rect x="0" y="70" width="6" height="14" fill="#777" opacity="0.9">
+      <animate attributeName="x" from="0" to="1000" dur="0.75s" begin="0.3s" fill="freeze" />
+    </rect>
+  </g>
+  <g clip-path="url(#clip-6)">
+    <text x="0" y="84" xml:space="preserve" dominant-baseline="text-before-edge">                                     .:-:.::--==-..++=-=+*:                                         </text>
+    <rect x="0" y="84" width="6" height="14" fill="#777" opacity="0.9">
+      <animate attributeName="x" from="0" to="1000" dur="0.75s" begin="0.36s" fill="freeze" />
+    </rect>
+  </g>
+  <g clip-path="url(#clip-7)">
+    <text x="0" y="98" xml:space="preserve" dominant-baseline="text-before-edge">                                     +css*cccsccsssccc*cssc.                                        </text>
+    <rect x="0" y="98" width="6" height="14" fill="#777" opacity="0.9">
+      <animate attributeName="x" from="0" to="1000" dur="0.75s" begin="0.42s" fill="freeze" />
+    </rect>
+  </g>
+  <g clip-path="url(#clip-8)">
+    <text x="0" y="112" xml:space="preserve" dominant-baseline="text-before-edge">                                  `:=##s######s####sssssssc-...`..                                  </text>
+    <rect x="0" y="112" width="6" height="14" fill="#777" opacity="0.9">
+      <animate attributeName="x" from="0" to="1000" dur="0.75s" begin="0.48s" fill="freeze" />
+    </rect>
+  </g>
+  <g clip-path="url(#clip-9)">
+    <text x="0" y="126" xml:space="preserve" dominant-baseline="text-before-edge">                               `*s##s##############scs#c+##s*=:.``:                                 </text>
+    <rect x="0" y="126" width="6" height="14" fill="#777" opacity="0.9">
+      <animate attributeName="x" from="0" to="1000" dur="0.75s" begin="0.54s" fill="freeze" />
+    </rect>
+  </g>
+  <g clip-path="url(#clip-10)">
+    <text x="0" y="140" xml:space="preserve" dominant-baseline="text-before-edge">                         `--==*####ss######sscs#s#####c+s##s####ccc-.   ..                          </text>
+    <rect x="0" y="140" width="6" height="14" fill="#777" opacity="0.9">
+      <animate attributeName="x" from="0" to="1000" dur="0.75s" begin="0.6s" fill="freeze" />
+    </rect>
+  </g>
+  <g clip-path="url(#clip-11)">
+    <text x="0" y="154" xml:space="preserve" dominant-baseline="text-before-edge">                       -*=*##s##s#########sccss#csc**ss####cs#ssc*cs*=:.                            </text>
+    <rect x="0" y="154" width="6" height="14" fill="#777" opacity="0.9">
+      <animate attributeName="x" from="0" to="1000" dur="0.75s" begin="0.6599999999999999s" fill="freeze" />
+    </rect>
+  </g>
+  <g clip-path="url(#clip-12)">
+    <text x="0" y="168" xml:space="preserve" dominant-baseline="text-before-edge">                      +cs*c#####s###############scss**####s*sssccss####+.                           </text>
+    <rect x="0" y="168" width="6" height="14" fill="#777" opacity="0.9">
+      <animate attributeName="x" from="0" to="1000" dur="0.75s" begin="0.72s" fill="freeze" />
+    </rect>
+  </g>
+  <g clip-path="url(#clip-13)">
+    <text x="0" y="182" xml:space="preserve" dominant-baseline="text-before-edge">                      *s#########s###ss##%%####ss##c*+sc#ssscc*s**c#s+:=` .                         </text>
+    <rect x="0" y="182" width="6" height="14" fill="#777" opacity="0.9">
+      <animate attributeName="x" from="0" to="1000" dur="0.75s" begin="0.78s" fill="freeze" />
+    </rect>
+  </g>
+  <g clip-path="url(#clip-14)">
+    <text x="0" y="196" xml:space="preserve" dominant-baseline="text-before-edge">                    :+cssc####s#sss#######%##sssc#sscss*s###c+**=sccc*+=--:.                        </text>
+    <rect x="0" y="196" width="6" height="14" fill="#777" opacity="0.9">
+      <animate attributeName="x" from="0" to="1000" dur="0.75s" begin="0.84s" fill="freeze" />
+    </rect>
+  </g>
+  <g clip-path="url(#clip-15)">
+    <text x="0" y="210" xml:space="preserve" dominant-baseline="text-before-edge">                   `ccccssss###ss#s%#s#####s#ssss#ccs*ss##c####sss#ccc**=-::-                       </text>
+    <rect x="0" y="210" width="6" height="14" fill="#777" opacity="0.9">
+      <animate attributeName="x" from="0" to="1000" dur="0.75s" begin="0.8999999999999999s" fill="freeze" />
+    </rect>
+  </g>
+  <g clip-path="url(#clip-16)">
+    <text x="0" y="224" xml:space="preserve" dominant-baseline="text-before-edge">                .`-ccss#######ss#####s####s#s*ssscsss#scssscc#ssss%%#ss*+=:-`                       </text>
+    <rect x="0" y="224" width="6" height="14" fill="#777" opacity="0.9">
+      <animate attributeName="x" from="0" to="1000" dur="0.75s" begin="0.96s" fill="freeze" />
+    </rect>
+  </g>
+  <g clip-path="url(#clip-17)">
+    <text x="0" y="238" xml:space="preserve" dominant-baseline="text-before-edge">              .:. =csss##s##########ss###ss#ccssssc###sssss#s#s#c*###ssc*=*=                        </text>
+    <rect x="0" y="238" width="6" height="14" fill="#777" opacity="0.9">
+      <animate attributeName="x" from="0" to="1000" dur="0.75s" begin="1.02s" fill="freeze" />
+    </rect>
+  </g>
+  <g clip-path="url(#clip-18)">
+    <text x="0" y="252" xml:space="preserve" dominant-baseline="text-before-edge">              . ..+s#sss##s#ss########%%##########s#sc+c####%%##ccssssc=-=+-.                       </text>
+    <rect x="0" y="252" width="6" height="14" fill="#777" opacity="0.9">
+      <animate attributeName="x" from="0" to="1000" dur="0.75s" begin="1.08s" fill="freeze" />
+    </rect>
+  </g>
+  <g clip-path="url(#clip-19)">
+    <text x="0" y="266" xml:space="preserve" dominant-baseline="text-before-edge">               .:=ssssssss#ssc#scs#%####ss##sssc*+==+**=*cc#ss#s##sc=+cc**=-.                       </text>
+    <rect x="0" y="266" width="6" height="14" fill="#777" opacity="0.9">
+      <animate attributeName="x" from="0" to="1000" dur="0.75s" begin="1.14s" fill="freeze" />
+    </rect>
+  </g>
+  <g clip-path="url(#clip-20)">
+    <text x="0" y="280" xml:space="preserve" dominant-baseline="text-before-edge">                `=sssscs##s#####sss#%c+ssccc+=====+*cc*=--c#s##cs##s+==+*=-.                        </text>
+    <rect x="0" y="280" width="6" height="14" fill="#777" opacity="0.9">
+      <animate attributeName="x" from="0" to="1000" dur="0.75s" begin="1.2s" fill="freeze" />
+    </rect>
+  </g>
+  <g clip-path="url(#clip-21)">
+    <text x="0" y="294" xml:space="preserve" dominant-baseline="text-before-edge">                 -*c##ssscs#####%sscc*cssc*=:--:-+**c*+=-:=ss##s#%#s*****++=`                       </text>
+    <rect x="0" y="294" width="6" height="14" fill="#777" opacity="0.9">
+      <animate attributeName="x" from="0" to="1000" dur="0.75s" begin="1.26s" fill="freeze" />
+    </rect>
+  </g>
+  <g clip-path="url(#clip-22)">
+    <text x="0" y="308" xml:space="preserve" dominant-baseline="text-before-edge">                .ccc#ss#scss####s*=++*c#sss*==-`=*ccs#cc*++csss+s%#sssc*+cc+                        </text>
+    <rect x="0" y="308" width="6" height="14" fill="#777" opacity="0.9">
+      <animate attributeName="x" from="0" to="1000" dur="0.75s" begin="1.3199999999999998s" fill="freeze" />
+    </rect>
+  </g>
+  <g clip-path="url(#clip-23)">
+    <text x="0" y="322" xml:space="preserve" dominant-baseline="text-before-edge">                :*cs#ss#%%ss###**+==--=+*c*+*c*=`-=**+=``::=-=s#cssscs*c*cc=-`                      </text>
+    <rect x="0" y="322" width="6" height="14" fill="#777" opacity="0.9">
+      <animate attributeName="x" from="0" to="1000" dur="0.75s" begin="1.38s" fill="freeze" />
+    </rect>
+  </g>
+  <g clip-path="url(#clip-24)">
+    <text x="0" y="336" xml:space="preserve" dominant-baseline="text-before-edge">                 .cs#######%%#sc+--=+==+*+--c++=`.`-===--`.``=s#s##cs#ss#c+c`-                      </text>
+    <rect x="0" y="336" width="6" height="14" fill="#777" opacity="0.9">
+      <animate attributeName="x" from="0" to="1000" dur="0.75s" begin="1.44s" fill="freeze" />
+    </rect>
+  </g>
+  <g clip-path="url(#clip-25)">
+    <text x="0" y="350" xml:space="preserve" dominant-baseline="text-before-edge">                  -cs##ssss###s=::`:-=+++=:+-==`:`:-===-` ..:-*###*+c####ssc:                       </text>
+    <rect x="0" y="350" width="6" height="14" fill="#777" opacity="0.9">
+      <animate attributeName="x" from="0" to="1000" dur="0.75s" begin="1.5s" fill="freeze" />
+    </rect>
+  </g>
+  <g clip-path="url(#clip-26)">
+    <text x="0" y="364" xml:space="preserve" dominant-baseline="text-before-edge">                   :s#s*+*s#scs-``::--==++=-`-=`.:+c+=---:` .:++=c*+***c#*+.                        </text>
+    <rect x="0" y="364" width="6" height="14" fill="#777" opacity="0.9">
+      <animate attributeName="x" from="0" to="1000" dur="0.75s" begin="1.56s" fill="freeze" />
+    </rect>
+  </g>
+  <g clip-path="url(#clip-27)">
+    <text x="0" y="378" xml:space="preserve" dominant-baseline="text-before-edge">                    .=cs#%#%***=`.`:-==+**-*s*++c==c*=:::.  .`-=-cc***cc+                           </text>
+    <rect x="0" y="378" width="6" height="14" fill="#777" opacity="0.9">
+      <animate attributeName="x" from="0" to="1000" dur="0.75s" begin="1.6199999999999999s" fill="freeze" />
+    </rect>
+  </g>
+  <g clip-path="url(#clip-28)">
+    <text x="0" y="392" xml:space="preserve" dominant-baseline="text-before-edge">                       .*###c++=:```::-=---+s###+-::--:```...`*cc#css*c**                           </text>
+    <rect x="0" y="392" width="6" height="14" fill="#777" opacity="0.9">
+      <animate attributeName="x" from="0" to="1000" dur="0.75s" begin="1.68s" fill="freeze" />
+    </rect>
+  </g>
+  <g clip-path="url(#clip-29)">
+    <text x="0" y="406" xml:space="preserve" dominant-baseline="text-before-edge">                        .csss#%s:````:--::-+cs#c*=:--:``.....:c###s*ss**:                           </text>
+    <rect x="0" y="406" width="6" height="14" fill="#777" opacity="0.9">
+      <animate attributeName="x" from="0" to="1000" dur="0.75s" begin="1.74s" fill="freeze" />
+    </rect>
+  </g>
+  <g clip-path="url(#clip-30)">
+    <text x="0" y="420" xml:space="preserve" dominant-baseline="text-before-edge">                          +s####+::``:-+*++c*s#c+=++c=`.....`+####s+*s-                             </text>
+    <rect x="0" y="420" width="6" height="14" fill="#777" opacity="0.9">
+      <animate attributeName="x" from="0" to="1000" dur="0.75s" begin="1.7999999999999998s" fill="freeze" />
+    </rect>
+  </g>
+  <g clip-path="url(#clip-31)">
+    <text x="0" y="434" xml:space="preserve" dominant-baseline="text-before-edge">                          .ssss##+::`:-==-:-+css*=-::--``..`:####s+=:                               </text>
+    <rect x="0" y="434" width="6" height="14" fill="#777" opacity="0.9">
+      <animate attributeName="x" from="0" to="1000" dur="0.75s" begin="1.8599999999999999s" fill="freeze" />
+    </rect>
+  </g>
+  <g clip-path="url(#clip-32)">
+    <text x="0" y="448" xml:space="preserve" dominant-baseline="text-before-edge">                           `-:=s%%c-:::::--+ccscc*+-:--:::::-##%#s*:                                </text>
+    <rect x="0" y="448" width="6" height="14" fill="#777" opacity="0.9">
+      <animate attributeName="x" from="0" to="1000" dur="0.75s" begin="1.92s" fill="freeze" />
+    </rect>
+  </g>
+  <g clip-path="url(#clip-33)">
+    <text x="0" y="462" xml:space="preserve" dominant-baseline="text-before-edge">                               :+s#*----:::-+*cc*=:``:-++=-`:###+..-                                </text>
+    <rect x="0" y="462" width="6" height="14" fill="#777" opacity="0.9">
+      <animate attributeName="x" from="0" to="1000" dur="0.75s" begin="1.98s" fill="freeze" />
+    </rect>
+  </g>
+  <g clip-path="url(#clip-34)">
+    <text x="0" y="476" xml:space="preserve" dominant-baseline="text-before-edge">                                 .=+`:=+*+=+c###s*=-+**++-` `#s+-.                                  </text>
+    <rect x="0" y="476" width="6" height="14" fill="#777" opacity="0.9">
+      <animate attributeName="x" from="0" to="1000" dur="0.75s" begin="2.04s" fill="freeze" />
+    </rect>
+  </g>
+  <g clip-path="url(#clip-35)">
+    <text x="0" y="490" xml:space="preserve" dominant-baseline="text-before-edge">                                    .``:-+c##%###sc**+++=`  .%#*`                                   </text>
+    <rect x="0" y="490" width="6" height="14" fill="#777" opacity="0.9">
+      <animate attributeName="x" from="0" to="1000" dur="0.75s" begin="2.1s" fill="freeze" />
+    </rect>
+  </g>
+  <g clip-path="url(#clip-36)">
+    <text x="0" y="504" xml:space="preserve" dominant-baseline="text-before-edge">                                    .````:-+*sc*++==++=-:...+%#*-`                                  </text>
+    <rect x="0" y="504" width="6" height="14" fill="#777" opacity="0.9">
+      <animate attributeName="x" from="0" to="1000" dur="0.75s" begin="2.16s" fill="freeze" />
+    </rect>
+  </g>
+  <g clip-path="url(#clip-37)">
+    <text x="0" y="518" xml:space="preserve" dominant-baseline="text-before-edge">                                   -s:````:-+*c*++++++-::`-c##s+:```                                </text>
+    <rect x="0" y="518" width="6" height="14" fill="#777" opacity="0.9">
+      <animate attributeName="x" from="0" to="1000" dur="0.75s" begin="2.2199999999999998s" fill="freeze" />
+    </rect>
+  </g>
+  <g clip-path="url(#clip-38)">
+    <text x="0" y="532" xml:space="preserve" dominant-baseline="text-before-edge">                                 :c##=````:-=*c******+=++c##%s+-`.`::``.                            </text>
+    <rect x="0" y="532" width="6" height="14" fill="#777" opacity="0.9">
+      <animate attributeName="x" from="0" to="1000" dur="0.75s" begin="2.28s" fill="freeze" />
+    </rect>
+  </g>
+  <g clip-path="url(#clip-39)">
+    <text x="0" y="546" xml:space="preserve" dominant-baseline="text-before-edge">                                :c##%*````:-=+*******ccsss##c*=:```:+=**+==-`.                      </text>
+    <rect x="0" y="546" width="6" height="14" fill="#777" opacity="0.9">
+      <animate attributeName="x" from="0" to="1000" dur="0.75s" begin="2.34s" fill="freeze" />
+    </rect>
+  </g>
+  <g clip-path="url(#clip-40)">
+    <text x="0" y="560" xml:space="preserve" dominant-baseline="text-before-edge">                               `*s#%#c-::::-=+*cc***cscccssc*+-``::=cc####ssscc*=-:`.               </text>
+    <rect x="0" y="560" width="6" height="14" fill="#777" opacity="0.9">
+      <animate attributeName="x" from="0" to="1000" dur="0.75s" begin="2.4s" fill="freeze" />
+    </rect>
+  </g>
+  <g clip-path="url(#clip-41)">
+    <text x="0" y="574" xml:space="preserve" dominant-baseline="text-before-edge">                              .:*s%%sc*-:::==++++===*ccccc*++-:`:-=+cs##sccs#ssc*++===-`.           </text>
+    <rect x="0" y="574" width="6" height="14" fill="#777" opacity="0.9">
+      <animate attributeName="x" from="0" to="1000" dur="0.75s" begin="2.46s" fill="freeze" />
+    </rect>
+  </g>
+  <g clip-path="url(#clip-42)">
+    <text x="0" y="588" xml:space="preserve" dominant-baseline="text-before-edge">                           `--::+s%%scc*=::=+==-:::=+*+++==*+:::-=+cs###s#ss#sscc**++=-:--:.        </text>
+    <rect x="0" y="588" width="6" height="14" fill="#777" opacity="0.9">
+      <animate attributeName="x" from="0" to="1000" dur="0.75s" begin="2.52s" fill="freeze" />
+    </rect>
+  </g>
+  <g clip-path="url(#clip-43)">
+    <text x="0" y="602" xml:space="preserve" dominant-baseline="text-before-edge">                       `:=+----:=s##ccc*+=====--::::-==-+=++:::-=++*s#####ss#scccccc*+++==--:.      </text>
+    <rect x="0" y="602" width="6" height="14" fill="#777" opacity="0.9">
+      <animate attributeName="x" from="0" to="1000" dur="0.75s" begin="2.58s" fill="freeze" />
+    </rect>
+  </g>
+  <g clip-path="url(#clip-44)">
+    <text x="0" y="616" xml:space="preserve" dominant-baseline="text-before-edge">                  `:=+****----===csss*++=====---::::--=+**+=-::-=*s####ssscssscccc**cs*+*+--=-:.    </text>
+    <rect x="0" y="616" width="6" height="14" fill="#777" opacity="0.9">
+      <animate attributeName="x" from="0" to="1000" dur="0.75s" begin="2.6399999999999997s" fill="freeze" />
+    </rect>
+  </g>
+  <g clip-path="url(#clip-45)">
+    <text x="0" y="630" xml:space="preserve" dominant-baseline="text-before-edge">                :++******=:-=++==+=csc++====--:::::::-*####s*=--=*##sssssss#scccc*+ss*sc=:=+===:    </text>
+    <rect x="0" y="630" width="6" height="14" fill="#777" opacity="0.9">
+      <animate attributeName="x" from="0" to="1000" dur="0.75s" begin="2.6999999999999997s" fill="freeze" />
+    </rect>
+  </g>
+  <g clip-path="url(#clip-46)">
+    <text x="0" y="644" xml:space="preserve" dominant-baseline="text-before-edge">              :=+++*c**+=--=+++--*s#c#s*++=+==-:::=*cs%%##%####c*c#ssssscssscccc*+*#*s*+*ccc*+=-:   </text>
+    <rect x="0" y="644" width="6" height="14" fill="#777" opacity="0.9">
+      <animate attributeName="x" from="0" to="1000" dur="0.75s" begin="2.76s" fill="freeze" />
+    </rect>
+  </g>
+  <g clip-path="url(#clip-47)">
+    <text x="0" y="658" xml:space="preserve" dominant-baseline="text-before-edge">            `-==+***c*+=**==--=+=*cccccss**+++=-+csss###s#####scccssccc**ssc**cc*+ss**+s###sc=--::. </text>
+    <rect x="0" y="658" width="6" height="14" fill="#777" opacity="0.9">
+      <animate attributeName="x" from="0" to="1000" dur="0.75s" begin="2.82s" fill="freeze" />
+    </rect>
+  </g>
+  <g clip-path="url(#clip-48)">
+    <text x="0" y="672" xml:space="preserve" dominant-baseline="text-before-edge">           `=-==*c**c*+++++-:=*ccccccc+=*csc*++cs#sccs#sssccccccccsc++**cs**++cc++sc+c###sc*=-==---.</text>
+    <rect x="0" y="672" width="6" height="14" fill="#777" opacity="0.9">
+      <animate attributeName="x" from="0" to="1000" dur="0.75s" begin="2.88s" fill="freeze" />
+    </rect>
+  </g>
+</svg>
