@@ -35,8 +35,8 @@ GREEN = "#39d353"
 GOLD = "#f2cc60"
 
 # reveal timing
-COL_T = 0.018   # per-column delay contribution
-ROW_T = 0.045   # per-row delay contribution
+COL_T = 0.065   # per-column delay contribution
+ROW_T = 0.0358  # per-row delay contribution
 CELL_DUR = 0.42
 
 
@@ -143,11 +143,11 @@ def render(data):
     canvas_h = TITLEBAR_H + TOP_LABEL_H + art_h + stats_h + PAD
 
     css = f"""
-@keyframes cell {{
-  0%   {{ opacity: 0; transform: translateY(-6px); }}
-  100% {{ opacity: 1; transform: translateY(0); }}
-}}
-.c {{ opacity: 0; animation: cell {CELL_DUR:.2f}s cubic-bezier(.2,.8,.2,1) both; }}
+.c {{ transform-box: fill-box; transform-origin: center; opacity: 0; animation: pop 0.55s ease-out both; }}
+.g {{ animation: pop 0.55s ease-out both, flash 0.7s ease-out both; }}
+@keyframes pop {{ 0% {{ opacity: 0; transform: scale(.2); }} 60% {{ opacity: 1; transform: scale(1.1); }} 100% {{ opacity: 1; transform: scale(1); }} }}
+@keyframes flash {{ 0% {{ filter: brightness(2.4); }} 45% {{ filter: brightness(2.4); }} 100% {{ filter: brightness(1); }} }}
+@media (prefers-reduced-motion: reduce) {{ .c {{ opacity: 1 !important; animation: none !important; }} }}
 """.strip()
 
     username = data.get("username", "ayutismm")
@@ -182,7 +182,7 @@ def render(data):
         y = grid_top + wi * STEP + CELL * 0.78
         parts.append(f'<text x="{PAD}" y="{y:.1f}" fill="{MUTED}" font-size="9">{wname}</text>')
 
-    # the boxes -- rounded rects with diagonal slide-down reveal
+    # the boxes -- rounded rects with pop and flash cascade animation
     for ci, column in enumerate(grid):
         gx = grid_left + ci * STEP
         for ri, cell in enumerate(column):
@@ -192,8 +192,9 @@ def render(data):
             gy = grid_top + ri * STEP
             delay = ci * COL_T + ri * ROW_T
             plural = "s" if count != 1 else ""
+            cls = "c g" if count > 0 else "c e"
             parts.append(
-                f'<rect class="c" x="{gx}" y="{gy}" width="{CELL}" height="{CELL}" rx="2.5" '
+                f'<rect class="{cls}" x="{gx}" y="{gy}" width="{CELL}" height="{CELL}" rx="2.5" '
                 f'fill="{PALETTE[lvl]}" style="animation-delay:{delay:.3f}s">'
                 f'<title>{date_s}: {count} contribution{plural}</title></rect>'
             )
