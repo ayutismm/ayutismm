@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1000 686" width="1000" height="686" xml:space="preserve">
   <style>
-    text { fill: #888; font-family: 'DejaVu Sans Mono', 'Courier New', monospace; font-size: 12px; white-space: pre; }
+    text { fill: #38bdf8; font-family: 'DejaVu Sans Mono', 'Courier New', monospace; font-size: 12px; white-space: pre; }
   </style>
-  <rect width="100%" height="100%" fill="#fff" />
+  <rect width="100%" height="100%" fill="#0f172a" rx="16" ry="16" stroke="#334155" stroke-width="1" />
   <defs>
   <clipPath id="clip-0">
     <rect x="0" y="0" width="0" height="14">
