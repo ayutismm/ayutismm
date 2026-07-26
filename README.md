@@ -3,14 +3,14 @@
 <!-- animated contribution graph: real data, boxes reveal cell by cell
      (regenerated daily by .github/workflows/update-profile-art.yml) -->
 
-<h3><code>avi@github ~ $ ./contributions.sh</code></h3>
+<h3><code>ayutismm@github ~ $ ./contributions.sh</code></h3>
 
 <img src="./contrib-heatmap.svg" width="860" alt="Ayush's GitHub contribution graph — auto-refreshed daily" />
 
 <br>
 <br>
 
-<h3><code>avi@github ~ $ whoami</code></h3>
+<h3><code>ayutismm@github ~ $ whoami</code></h3>
 
 <table>
 <tr>
@@ -22,7 +22,7 @@
 <br>
 <br>
 
-<h3><code>avi@github ~ $ ./links.sh</code></h3>
+<h3><code>ayutismm@github ~ $ ./links.sh</code></h3>
 
 <p><b>ECE Student · Developer · Designer</b></p>
 
