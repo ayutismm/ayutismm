@@ -1,364 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 540 972" width="540" height="972" xml:space="preserve">
-  <style>
-    text { shape-rendering: crispEdges; }
-  </style>
-  <rect x="0" y="0" width="100%" height="100%" fill="#0f172a" rx="16" ry="16" stroke="#334155" stroke-width="1" />
-  <text x="28" y="24" fill="#e2e8f0" font-family="'JetBrains Mono', 'Courier New', monospace" font-size="12px" xml:space="preserve">ayush@ascii</text>
-  <text x="138" y="24" fill="#38bdf8" font-family="'JetBrains Mono', 'Courier New', monospace" font-size="12px" xml:space="preserve">./render_portrait.py</text>
-  <text x="28" y="46" fill="#94a3b8" font-family="'JetBrains Mono', 'Courier New', monospace" font-size="12px" xml:space="preserve">──────────────────────────────────────────────</text>
-  <defs>
-  <clipPath id="clip-0">
-    <rect x="28.6" y="308.0" width="0" height="13.0">
-      <animate attributeName="width" from="0" to="482.8" dur="0.75s" begin="0.0s" fill="freeze" />
-    </rect>
-  </clipPath>
-  <clipPath id="clip-1">
-    <rect x="28.6" y="321.0" width="0" height="13.0">
-      <animate attributeName="width" from="0" to="482.8" dur="0.75s" begin="0.04s" fill="freeze" />
-    </rect>
-  </clipPath>
-  <clipPath id="clip-2">
-    <rect x="28.6" y="334.0" width="0" height="13.0">
-      <animate attributeName="width" from="0" to="482.8" dur="0.75s" begin="0.08s" fill="freeze" />
-    </rect>
-  </clipPath>
-  <clipPath id="clip-3">
-    <rect x="28.6" y="347.0" width="0" height="13.0">
-      <animate attributeName="width" from="0" to="482.8" dur="0.75s" begin="0.12s" fill="freeze" />
-    </rect>
-  </clipPath>
-  <clipPath id="clip-4">
-    <rect x="28.6" y="360.0" width="0" height="13.0">
-      <animate attributeName="width" from="0" to="482.8" dur="0.75s" begin="0.16s" fill="freeze" />
-    </rect>
-  </clipPath>
-  <clipPath id="clip-5">
-    <rect x="28.6" y="373.0" width="0" height="13.0">
-      <animate attributeName="width" from="0" to="482.8" dur="0.75s" begin="0.2s" fill="freeze" />
-    </rect>
-  </clipPath>
-  <clipPath id="clip-6">
-    <rect x="28.6" y="386.0" width="0" height="13.0">
-      <animate attributeName="width" from="0" to="482.8" dur="0.75s" begin="0.24s" fill="freeze" />
-    </rect>
-  </clipPath>
-  <clipPath id="clip-7">
-    <rect x="28.6" y="399.0" width="0" height="13.0">
-      <animate attributeName="width" from="0" to="482.8" dur="0.75s" begin="0.28s" fill="freeze" />
-    </rect>
-  </clipPath>
-  <clipPath id="clip-8">
-    <rect x="28.6" y="412.0" width="0" height="13.0">
-      <animate attributeName="width" from="0" to="482.8" dur="0.75s" begin="0.32s" fill="freeze" />
-    </rect>
-  </clipPath>
-  <clipPath id="clip-9">
-    <rect x="28.6" y="425.0" width="0" height="13.0">
-      <animate attributeName="width" from="0" to="482.8" dur="0.75s" begin="0.36s" fill="freeze" />
-    </rect>
-  </clipPath>
-  <clipPath id="clip-10">
-    <rect x="28.6" y="438.0" width="0" height="13.0">
-      <animate attributeName="width" from="0" to="482.8" dur="0.75s" begin="0.4s" fill="freeze" />
-    </rect>
-  </clipPath>
-  <clipPath id="clip-11">
-    <rect x="28.6" y="451.0" width="0" height="13.0">
-      <animate attributeName="width" from="0" to="482.8" dur="0.75s" begin="0.44s" fill="freeze" />
-    </rect>
-  </clipPath>
-  <clipPath id="clip-12">
-    <rect x="28.6" y="464.0" width="0" height="13.0">
-      <animate attributeName="width" from="0" to="482.8" dur="0.75s" begin="0.48s" fill="freeze" />
-    </rect>
-  </clipPath>
-  <clipPath id="clip-13">
-    <rect x="28.6" y="477.0" width="0" height="13.0">
-      <animate attributeName="width" from="0" to="482.8" dur="0.75s" begin="0.52s" fill="freeze" />
-    </rect>
-  </clipPath>
-  <clipPath id="clip-14">
-    <rect x="28.6" y="490.0" width="0" height="13.0">
-      <animate attributeName="width" from="0" to="482.8" dur="0.75s" begin="0.56s" fill="freeze" />
-    </rect>
-  </clipPath>
-  <clipPath id="clip-15">
-    <rect x="28.6" y="503.0" width="0" height="13.0">
-      <animate attributeName="width" from="0" to="482.8" dur="0.75s" begin="0.6s" fill="freeze" />
-    </rect>
-  </clipPath>
-  <clipPath id="clip-16">
-    <rect x="28.6" y="516.0" width="0" height="13.0">
-      <animate attributeName="width" from="0" to="482.8" dur="0.75s" begin="0.64s" fill="freeze" />
-    </rect>
-  </clipPath>
-  <clipPath id="clip-17">
-    <rect x="28.6" y="529.0" width="0" height="13.0">
-      <animate attributeName="width" from="0" to="482.8" dur="0.75s" begin="0.68s" fill="freeze" />
-    </rect>
-  </clipPath>
-  <clipPath id="clip-18">
-    <rect x="28.6" y="542.0" width="0" height="13.0">
-      <animate attributeName="width" from="0" to="482.8" dur="0.75s" begin="0.72s" fill="freeze" />
-    </rect>
-  </clipPath>
-  <clipPath id="clip-19">
-    <rect x="28.6" y="555.0" width="0" height="13.0">
-      <animate attributeName="width" from="0" to="482.8" dur="0.75s" begin="0.76s" fill="freeze" />
-    </rect>
-  </clipPath>
-  <clipPath id="clip-20">
-    <rect x="28.6" y="568.0" width="0" height="13.0">
-      <animate attributeName="width" from="0" to="482.8" dur="0.75s" begin="0.8s" fill="freeze" />
-    </rect>
-  </clipPath>
-  <clipPath id="clip-21">
-    <rect x="28.6" y="581.0" width="0" height="13.0">
-      <animate attributeName="width" from="0" to="482.8" dur="0.75s" begin="0.84s" fill="freeze" />
-    </rect>
-  </clipPath>
-  <clipPath id="clip-22">
-    <rect x="28.6" y="594.0" width="0" height="13.0">
-      <animate attributeName="width" from="0" to="482.8" dur="0.75s" begin="0.88s" fill="freeze" />
-    </rect>
-  </clipPath>
-  <clipPath id="clip-23">
-    <rect x="28.6" y="607.0" width="0" height="13.0">
-      <animate attributeName="width" from="0" to="482.8" dur="0.75s" begin="0.92s" fill="freeze" />
-    </rect>
-  </clipPath>
-  <clipPath id="clip-24">
-    <rect x="28.6" y="620.0" width="0" height="13.0">
-      <animate attributeName="width" from="0" to="482.8" dur="0.75s" begin="0.96s" fill="freeze" />
-    </rect>
-  </clipPath>
-  <clipPath id="clip-25">
-    <rect x="28.6" y="633.0" width="0" height="13.0">
-      <animate attributeName="width" from="0" to="482.8" dur="0.75s" begin="1.0s" fill="freeze" />
-    </rect>
-  </clipPath>
-  <clipPath id="clip-26">
-    <rect x="28.6" y="646.0" width="0" height="13.0">
-      <animate attributeName="width" from="0" to="482.8" dur="0.75s" begin="1.04s" fill="freeze" />
-    </rect>
-  </clipPath>
-  <clipPath id="clip-27">
-    <rect x="28.6" y="659.0" width="0" height="13.0">
-      <animate attributeName="width" from="0" to="482.8" dur="0.75s" begin="1.08s" fill="freeze" />
-    </rect>
-  </clipPath>
-  <clipPath id="clip-28">
-    <rect x="28.6" y="672.0" width="0" height="13.0">
-      <animate attributeName="width" from="0" to="482.8" dur="0.75s" begin="1.12s" fill="freeze" />
-    </rect>
-  </clipPath>
-  <clipPath id="clip-29">
-    <rect x="28.6" y="685.0" width="0" height="13.0">
-      <animate attributeName="width" from="0" to="482.8" dur="0.75s" begin="1.16s" fill="freeze" />
-    </rect>
-  </clipPath>
-  <clipPath id="clip-30">
-    <rect x="28.6" y="698.0" width="0" height="13.0">
-      <animate attributeName="width" from="0" to="482.8" dur="0.75s" begin="1.2s" fill="freeze" />
-    </rect>
-  </clipPath>
-  <clipPath id="clip-31">
-    <rect x="28.6" y="711.0" width="0" height="13.0">
-      <animate attributeName="width" from="0" to="482.8" dur="0.75s" begin="1.24s" fill="freeze" />
-    </rect>
-  </clipPath>
-  </defs>
-  <g clip-path="url(#clip-0)">
-    <text x="28.6" y="308.0" fill="#38bdf8" font-family="'JetBrains Mono', 'Courier New', monospace" font-size="11px" xml:space="preserve" dominant-baseline="text-before-edge">                                                                    </text>
-    <rect x="28.6" y="308.0" width="6" height="13.0" fill="#e2e8f0" opacity="0.8">
-      <animate attributeName="x" from="28.6" to="511.4" dur="0.75s" begin="0.0s" fill="freeze" />
-    </rect>
-  </g>
-  <g clip-path="url(#clip-1)">
-    <text x="28.6" y="321.0" fill="#38bdf8" font-family="'JetBrains Mono', 'Courier New', monospace" font-size="11px" xml:space="preserve" dominant-baseline="text-before-edge">                                                                    </text>
-    <rect x="28.6" y="321.0" width="6" height="13.0" fill="#e2e8f0" opacity="0.8">
-      <animate attributeName="x" from="28.6" to="511.4" dur="0.75s" begin="0.04s" fill="freeze" />
-    </rect>
-  </g>
-  <g clip-path="url(#clip-2)">
-    <text x="28.6" y="334.0" fill="#38bdf8" font-family="'JetBrains Mono', 'Courier New', monospace" font-size="11px" xml:space="preserve" dominant-baseline="text-before-edge">                                                                    </text>
-    <rect x="28.6" y="334.0" width="6" height="13.0" fill="#e2e8f0" opacity="0.8">
-      <animate attributeName="x" from="28.6" to="511.4" dur="0.75s" begin="0.08s" fill="freeze" />
-    </rect>
-  </g>
-  <g clip-path="url(#clip-3)">
-    <text x="28.6" y="347.0" fill="#38bdf8" font-family="'JetBrains Mono', 'Courier New', monospace" font-size="11px" xml:space="preserve" dominant-baseline="text-before-edge">                                                                    </text>
-    <rect x="28.6" y="347.0" width="6" height="13.0" fill="#e2e8f0" opacity="0.8">
-      <animate attributeName="x" from="28.6" to="511.4" dur="0.75s" begin="0.12s" fill="freeze" />
-    </rect>
-  </g>
-  <g clip-path="url(#clip-4)">
-    <text x="28.6" y="360.0" fill="#38bdf8" font-family="'JetBrains Mono', 'Courier New', monospace" font-size="11px" xml:space="preserve" dominant-baseline="text-before-edge">                         :++-++**==c++c*.                           </text>
-    <rect x="28.6" y="360.0" width="6" height="13.0" fill="#e2e8f0" opacity="0.8">
-      <animate attributeName="x" from="28.6" to="511.4" dur="0.75s" begin="0.16s" fill="freeze" />
-    </rect>
-  </g>
-  <g clip-path="url(#clip-5)">
-    <text x="28.6" y="373.0" fill="#38bdf8" font-family="'JetBrains Mono', 'Courier New', monospace" font-size="11px" xml:space="preserve" dominant-baseline="text-before-edge">                       `-s#####s###sssss-....                       </text>
-    <rect x="28.6" y="373.0" width="6" height="13.0" fill="#e2e8f0" opacity="0.8">
-      <animate attributeName="x" from="28.6" to="511.4" dur="0.75s" begin="0.2s" fill="freeze" />
-    </rect>
-  </g>
-  <g clip-path="url(#clip-6)">
-    <text x="28.6" y="386.0" fill="#38bdf8" font-family="'JetBrains Mono', 'Courier New', monospace" font-size="11px" xml:space="preserve" dominant-baseline="text-before-edge">                  ..`+########ss###ss*c#sc*==-                      </text>
-    <rect x="28.6" y="386.0" width="6" height="13.0" fill="#e2e8f0" opacity="0.8">
-      <animate attributeName="x" from="28.6" to="511.4" dur="0.75s" begin="0.24s" fill="freeze" />
-    </rect>
-  </g>
-  <g clip-path="url(#clip-7)">
-    <text x="28.6" y="399.0" fill="#38bdf8" font-family="'JetBrains Mono', 'Courier New', monospace" font-size="11px" xml:space="preserve" dominant-baseline="text-before-edge">               `+=#s####s####ccsscccss##csss*s*-`                   </text>
-    <rect x="28.6" y="399.0" width="6" height="13.0" fill="#e2e8f0" opacity="0.8">
-      <animate attributeName="x" from="28.6" to="511.4" dur="0.75s" begin="0.28s" fill="freeze" />
-    </rect>
-  </g>
-  <g clip-path="url(#clip-8)">
-    <text x="28.6" y="412.0" fill="#38bdf8" font-family="'JetBrains Mono', 'Courier New', monospace" font-size="11px" xml:space="preserve" dominant-baseline="text-before-edge">               *s#####s##s##%###sssc*##scccccs#*+.                  </text>
-    <rect x="28.6" y="412.0" width="6" height="13.0" fill="#e2e8f0" opacity="0.8">
-      <animate attributeName="x" from="28.6" to="511.4" dur="0.75s" begin="0.32s" fill="freeze" />
-    </rect>
-  </g>
-  <g clip-path="url(#clip-9)">
-    <text x="28.6" y="425.0" fill="#38bdf8" font-family="'JetBrains Mono', 'Courier New', monospace" font-size="11px" xml:space="preserve" dominant-baseline="text-before-edge">             .=css####ss####%#ssc#scccs##c**scc+=--`                </text>
-    <rect x="28.6" y="425.0" width="6" height="13.0" fill="#e2e8f0" opacity="0.8">
-      <animate attributeName="x" from="28.6" to="511.4" dur="0.75s" begin="0.36s" fill="freeze" />
-    </rect>
-  </g>
-  <g clip-path="url(#clip-10)">
-    <text x="28.6" y="438.0" fill="#38bdf8" font-family="'JetBrains Mono', 'Courier New', monospace" font-size="11px" xml:space="preserve" dominant-baseline="text-before-edge">            `*css####s######s#sssscssssss##s##ss*=`:.               </text>
-    <rect x="28.6" y="438.0" width="6" height="13.0" fill="#e2e8f0" opacity="0.8">
-      <animate attributeName="x" from="28.6" to="511.4" dur="0.75s" begin="0.4s" fill="freeze" />
-    </rect>
-  </g>
-  <g clip-path="url(#clip-11)">
-    <text x="28.6" y="451.0" fill="#38bdf8" font-family="'JetBrains Mono', 'Courier New', monospace" font-size="11px" xml:space="preserve" dominant-baseline="text-before-edge">          `.-css#s#######s##s#sssss#sssss##sc##sc++:                </text>
-    <rect x="28.6" y="451.0" width="6" height="13.0" fill="#e2e8f0" opacity="0.8">
-      <animate attributeName="x" from="28.6" to="511.4" dur="0.75s" begin="0.44s" fill="freeze" />
-    </rect>
-  </g>
-  <g clip-path="url(#clip-12)">
-    <text x="28.6" y="464.0" fill="#38bdf8" font-family="'JetBrains Mono', 'Courier New', monospace" font-size="11px" xml:space="preserve" dominant-baseline="text-before-edge">           `csssss#ssss#######sssc****cs###sss***+=:                </text>
-    <rect x="28.6" y="464.0" width="6" height="13.0" fill="#e2e8f0" opacity="0.8">
-      <animate attributeName="x" from="28.6" to="511.4" dur="0.75s" begin="0.48s" fill="freeze" />
-    </rect>
-  </g>
-  <g clip-path="url(#clip-13)">
-    <text x="28.6" y="477.0" fill="#38bdf8" font-family="'JetBrains Mono', 'Courier New', monospace" font-size="11px" xml:space="preserve" dominant-baseline="text-before-edge">           :sssc######s##ccsc*==-=+**+-+###s#s++++-`                </text>
-    <rect x="28.6" y="477.0" width="6" height="13.0" fill="#e2e8f0" opacity="0.8">
-      <animate attributeName="x" from="28.6" to="511.4" dur="0.75s" begin="0.52s" fill="freeze" />
-    </rect>
-  </g>
-  <g clip-path="url(#clip-14)">
-    <text x="28.6" y="490.0" fill="#38bdf8" font-family="'JetBrains Mono', 'Courier New', monospace" font-size="11px" xml:space="preserve" dominant-baseline="text-before-edge">           :cs#sscs###s***sss*--:+*cs*+=cssc%#sc**c=                </text>
-    <rect x="28.6" y="490.0" width="6" height="13.0" fill="#e2e8f0" opacity="0.8">
-      <animate attributeName="x" from="28.6" to="511.4" dur="0.75s" begin="0.56s" fill="freeze" />
-    </rect>
-  </g>
-  <g clip-path="url(#clip-15)">
-    <text x="28.6" y="503.0" fill="#38bdf8" font-family="'JetBrains Mono', 'Courier New', monospace" font-size="11px" xml:space="preserve" dominant-baseline="text-before-edge">           :c#ss#####c+==-=**=c*-:=++:::-:sssscscc*=:               </text>
-    <rect x="28.6" y="503.0" width="6" height="13.0" fill="#e2e8f0" opacity="0.8">
-      <animate attributeName="x" from="28.6" to="511.4" dur="0.75s" begin="0.6s" fill="freeze" />
-    </rect>
-  </g>
-  <g clip-path="url(#clip-16)">
-    <text x="28.6" y="516.0" fill="#38bdf8" font-family="'JetBrains Mono', 'Courier New', monospace" font-size="11px" xml:space="preserve" dominant-baseline="text-before-edge">            -s#sss##s+-:=+++-===``:-==: .-c##+s##sc*`               </text>
-    <rect x="28.6" y="516.0" width="6" height="13.0" fill="#e2e8f0" opacity="0.8">
-      <animate attributeName="x" from="28.6" to="511.4" dur="0.75s" begin="0.64s" fill="freeze" />
-    </rect>
-  </g>
-  <g clip-path="url(#clip-17)">
-    <text x="28.6" y="529.0" fill="#38bdf8" font-family="'JetBrains Mono', 'Courier New', monospace" font-size="11px" xml:space="preserve" dominant-baseline="text-before-edge">             :sc*s#sc-`:-==++=-=:-**=-:` `==****c*-                 </text>
-    <rect x="28.6" y="529.0" width="6" height="13.0" fill="#e2e8f0" opacity="0.8">
-      <animate attributeName="x" from="28.6" to="511.4" dur="0.75s" begin="0.68s" fill="freeze" />
-    </rect>
-  </g>
-  <g clip-path="url(#clip-18)">
-    <text x="28.6" y="542.0" fill="#38bdf8" font-family="'JetBrains Mono', 'Courier New', monospace" font-size="11px" xml:space="preserve" dominant-baseline="text-before-edge">               `*##c*=``::---+ssc----``...+*scscc-                  </text>
-    <rect x="28.6" y="542.0" width="6" height="13.0" fill="#e2e8f0" opacity="0.8">
-      <animate attributeName="x" from="28.6" to="511.4" dur="0.75s" begin="0.72s" fill="freeze" />
-    </rect>
-  </g>
-  <g clip-path="url(#clip-19)">
-    <text x="28.6" y="555.0" fill="#38bdf8" font-family="'JetBrains Mono', 'Courier New', monospace" font-size="11px" xml:space="preserve" dominant-baseline="text-before-edge">                 +s##s:``:-=-*csc+=+-`...`s##*cc=                   </text>
-    <rect x="28.6" y="555.0" width="6" height="13.0" fill="#e2e8f0" opacity="0.8">
-      <animate attributeName="x" from="28.6" to="511.4" dur="0.75s" begin="0.76s" fill="freeze" />
-    </rect>
-  </g>
-  <g clip-path="url(#clip-20)">
-    <text x="28.6" y="568.0" fill="#38bdf8" font-family="'JetBrains Mono', 'Courier New', monospace" font-size="11px" xml:space="preserve" dominant-baseline="text-before-edge">                  *ss#c:`:-+--*sc+---``.`+##s+-.                    </text>
-    <rect x="28.6" y="568.0" width="6" height="13.0" fill="#e2e8f0" opacity="0.8">
-      <animate attributeName="x" from="28.6" to="511.4" dur="0.75s" begin="0.8s" fill="freeze" />
-    </rect>
-  </g>
-  <g clip-path="url(#clip-21)">
-    <text x="28.6" y="581.0" fill="#38bdf8" font-family="'JetBrains Mono', 'Courier New', monospace" font-size="11px" xml:space="preserve" dominant-baseline="text-before-edge">                   ..*#s--::-=*cc+-::---:c##+=                      </text>
-    <rect x="28.6" y="581.0" width="6" height="13.0" fill="#e2e8f0" opacity="0.8">
-      <animate attributeName="x" from="28.6" to="511.4" dur="0.75s" begin="0.84s" fill="freeze" />
-    </rect>
-  </g>
-  <g clip-path="url(#clip-22)">
-    <text x="28.6" y="594.0" fill="#38bdf8" font-family="'JetBrains Mono', 'Courier New', monospace" font-size="11px" xml:space="preserve" dominant-baseline="text-before-edge">                      .=-:=+++s##c==+*+:.*s=.                       </text>
-    <rect x="28.6" y="594.0" width="6" height="13.0" fill="#e2e8f0" opacity="0.8">
-      <animate attributeName="x" from="28.6" to="511.4" dur="0.75s" begin="0.88s" fill="freeze" />
-    </rect>
-  </g>
-  <g clip-path="url(#clip-23)">
-    <text x="28.6" y="607.0" fill="#38bdf8" font-family="'JetBrains Mono', 'Courier New', monospace" font-size="11px" xml:space="preserve" dominant-baseline="text-before-edge">                         ``:=cs#s**++=:. c#+.                       </text>
-    <rect x="28.6" y="607.0" width="6" height="13.0" fill="#e2e8f0" opacity="0.8">
-      <animate attributeName="x" from="28.6" to="511.4" dur="0.75s" begin="0.92s" fill="freeze" />
-    </rect>
-  </g>
-  <g clip-path="url(#clip-24)">
-    <text x="28.6" y="620.0" fill="#38bdf8" font-family="'JetBrains Mono', 'Courier New', monospace" font-size="11px" xml:space="preserve" dominant-baseline="text-before-edge">                       .+-``:-+c*+++=-::*#c-``                      </text>
-    <rect x="28.6" y="620.0" width="6" height="13.0" fill="#e2e8f0" opacity="0.8">
-      <animate attributeName="x" from="28.6" to="511.4" dur="0.75s" begin="0.96s" fill="freeze" />
-    </rect>
-  </g>
-  <g clip-path="url(#clip-25)">
-    <text x="28.6" y="633.0" fill="#38bdf8" font-family="'JetBrains Mono', 'Courier New', monospace" font-size="11px" xml:space="preserve" dominant-baseline="text-before-edge">                      -s#+```-=******cc##s+:.`--=:`.                </text>
-    <rect x="28.6" y="633.0" width="6" height="13.0" fill="#e2e8f0" opacity="0.8">
-      <animate attributeName="x" from="28.6" to="511.4" dur="0.75s" begin="1.0s" fill="freeze" />
-    </rect>
-  </g>
-  <g clip-path="url(#clip-26)">
-    <text x="28.6" y="646.0" fill="#38bdf8" font-family="'JetBrains Mono', 'Courier New', monospace" font-size="11px" xml:space="preserve" dominant-baseline="text-before-edge">                     `c#%c-::-=+**+ccccs*+-`:-*ss#ssc*=-:`.         </text>
-    <rect x="28.6" y="646.0" width="6" height="13.0" fill="#e2e8f0" opacity="0.8">
-      <animate attributeName="x" from="28.6" to="511.4" dur="0.75s" begin="1.04s" fill="freeze" />
-    </rect>
-  </g>
-  <g clip-path="url(#clip-27)">
-    <text x="28.6" y="659.0" fill="#38bdf8" font-family="'JetBrains Mono', 'Courier New', monospace" font-size="11px" xml:space="preserve" dominant-baseline="text-before-edge">                   `::c%#c*-:=+==--+***+*-::-+s##scsssc*+=-:`.      </text>
-    <rect x="28.6" y="659.0" width="6" height="13.0" fill="#e2e8f0" opacity="0.8">
-      <animate attributeName="x" from="28.6" to="511.4" dur="0.75s" begin="1.08s" fill="freeze" />
-    </rect>
-  </g>
-  <g clip-path="url(#clip-28)">
-    <text x="28.6" y="672.0" fill="#38bdf8" font-family="'JetBrains Mono', 'Courier New', monospace" font-size="11px" xml:space="preserve" dominant-baseline="text-before-edge">              .`:=----*#sc*+====-::--=++=::-+*s###ssscccc*++==-`    </text>
-    <rect x="28.6" y="672.0" width="6" height="13.0" fill="#e2e8f0" opacity="0.8">
-      <animate attributeName="x" from="28.6" to="511.4" dur="0.75s" begin="1.12s" fill="freeze" />
-    </rect>
-  </g>
-  <g clip-path="url(#clip-29)">
-    <text x="28.6" y="685.0" fill="#38bdf8" font-family="'JetBrains Mono', 'Courier New', monospace" font-size="11px" xml:space="preserve" dominant-baseline="text-before-edge">           `=****=:=+=+*sc+===--::::-csc*=-=*###ssssscc**scc+-+=:   </text>
-    <rect x="28.6" y="685.0" width="6" height="13.0" fill="#e2e8f0" opacity="0.8">
-      <animate attributeName="x" from="28.6" to="511.4" dur="0.75s" begin="1.16s" fill="freeze" />
-    </rect>
-  </g>
-  <g clip-path="url(#clip-30)">
-    <text x="28.6" y="698.0" fill="#38bdf8" font-family="'JetBrains Mono', 'Courier New', monospace" font-size="11px" xml:space="preserve" dominant-baseline="text-before-edge">         `=+**c*+=-++-+ss#c*++=-:-+c#%#####ccsssccsscc*+scc+csc+=:. </text>
-    <rect x="28.6" y="698.0" width="6" height="13.0" fill="#e2e8f0" opacity="0.8">
-      <animate attributeName="x" from="28.6" to="511.4" dur="0.75s" begin="1.2s" fill="freeze" />
-    </rect>
-  </g>
-  <g clip-path="url(#clip-31)">
-    <text x="28.6" y="711.0" fill="#38bdf8" font-family="'JetBrains Mono', 'Courier New', monospace" font-size="11px" xml:space="preserve" dominant-baseline="text-before-edge">        -==*c**+*+=-+c****+cc*++cssc#ssssssccs***cc*+c*+s+c##s*----.</text>
-    <rect x="28.6" y="711.0" width="6" height="13.0" fill="#e2e8f0" opacity="0.8">
-      <animate attributeName="x" from="28.6" to="511.4" dur="0.75s" begin="1.24s" fill="freeze" />
-    </rect>
-  </g>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 540 516" width="540" height="516" font-family="'JetBrains Mono', 'Courier New', monospace">
+<style>
+  .r { fill: #38bdf8; font-size: 11px; opacity: 0; animation: fadeIn 0.5s ease-out both; }
+  .hdr { fill: #e2e8f0; font-size: 12px; opacity: 0; animation: fadeIn 0.5s ease-out both; }
+  .hdr2 { fill: #38bdf8; font-size: 12px; opacity: 0; animation: fadeIn 0.5s ease-out both; animation-delay: 0.05s; }
+  .sep { fill: #94a3b8; font-size: 12px; opacity: 0; animation: fadeIn 0.5s ease-out both; animation-delay: 0.1s; }
+  @keyframes fadeIn { 0% { opacity: 0; transform: translateY(-6px); } 60% { opacity: 1; transform: translateY(1px); } 100% { opacity: 1; transform: translateY(0); } }
+  @media (prefers-reduced-motion: reduce) { .r, .hdr, .hdr2, .sep { opacity: 1 !important; animation: none !important; } }
+</style>
+<rect width="540" height="516" fill="none" />
+<rect x="1" y="1" width="538" height="514" fill="#0f172a" rx="16" ry="16" stroke="#334155" stroke-width="1" />
+<text class="hdr" x="28" y="24" xml:space="preserve">ayush@ascii</text>
+<text class="hdr2" x="138" y="24" xml:space="preserve">./render_portrait.py</text>
+<text class="sep" x="28" y="46" xml:space="preserve">──────────────────────────────────────────────</text>
+  <text class="r" x="28.6" y="70.0" style="animation-delay:0.0s" xml:space="preserve" dominant-baseline="text-before-edge">                                                                    </text>
+  <text class="r" x="28.6" y="83.0" style="animation-delay:0.04s" xml:space="preserve" dominant-baseline="text-before-edge">                                                                    </text>
+  <text class="r" x="28.6" y="96.0" style="animation-delay:0.08s" xml:space="preserve" dominant-baseline="text-before-edge">                                                                    </text>
+  <text class="r" x="28.6" y="109.0" style="animation-delay:0.12s" xml:space="preserve" dominant-baseline="text-before-edge">                                                                    </text>
+  <text class="r" x="28.6" y="122.0" style="animation-delay:0.16s" xml:space="preserve" dominant-baseline="text-before-edge">                         :++-++**==c++c*.                           </text>
+  <text class="r" x="28.6" y="135.0" style="animation-delay:0.2s" xml:space="preserve" dominant-baseline="text-before-edge">                       `-s#####s###sssss-....                       </text>
+  <text class="r" x="28.6" y="148.0" style="animation-delay:0.24s" xml:space="preserve" dominant-baseline="text-before-edge">                  ..`+########ss###ss*c#sc*==-                      </text>
+  <text class="r" x="28.6" y="161.0" style="animation-delay:0.28s" xml:space="preserve" dominant-baseline="text-before-edge">               `+=#s####s####ccsscccss##csss*s*-`                   </text>
+  <text class="r" x="28.6" y="174.0" style="animation-delay:0.32s" xml:space="preserve" dominant-baseline="text-before-edge">               *s#####s##s##%###sssc*##scccccs#*+.                  </text>
+  <text class="r" x="28.6" y="187.0" style="animation-delay:0.36s" xml:space="preserve" dominant-baseline="text-before-edge">             .=css####ss####%#ssc#scccs##c**scc+=--`                </text>
+  <text class="r" x="28.6" y="200.0" style="animation-delay:0.4s" xml:space="preserve" dominant-baseline="text-before-edge">            `*css####s######s#sssscssssss##s##ss*=`:.               </text>
+  <text class="r" x="28.6" y="213.0" style="animation-delay:0.44s" xml:space="preserve" dominant-baseline="text-before-edge">          `.-css#s#######s##s#sssss#sssss##sc##sc++:                </text>
+  <text class="r" x="28.6" y="226.0" style="animation-delay:0.48s" xml:space="preserve" dominant-baseline="text-before-edge">           `csssss#ssss#######sssc****cs###sss***+=:                </text>
+  <text class="r" x="28.6" y="239.0" style="animation-delay:0.52s" xml:space="preserve" dominant-baseline="text-before-edge">           :sssc######s##ccsc*==-=+**+-+###s#s++++-`                </text>
+  <text class="r" x="28.6" y="252.0" style="animation-delay:0.56s" xml:space="preserve" dominant-baseline="text-before-edge">           :cs#sscs###s***sss*--:+*cs*+=cssc%#sc**c=                </text>
+  <text class="r" x="28.6" y="265.0" style="animation-delay:0.6s" xml:space="preserve" dominant-baseline="text-before-edge">           :c#ss#####c+==-=**=c*-:=++:::-:sssscscc*=:               </text>
+  <text class="r" x="28.6" y="278.0" style="animation-delay:0.64s" xml:space="preserve" dominant-baseline="text-before-edge">            -s#sss##s+-:=+++-===``:-==: .-c##+s##sc*`               </text>
+  <text class="r" x="28.6" y="291.0" style="animation-delay:0.68s" xml:space="preserve" dominant-baseline="text-before-edge">             :sc*s#sc-`:-==++=-=:-**=-:` `==****c*-                 </text>
+  <text class="r" x="28.6" y="304.0" style="animation-delay:0.72s" xml:space="preserve" dominant-baseline="text-before-edge">               `*##c*=``::---+ssc----``...+*scscc-                  </text>
+  <text class="r" x="28.6" y="317.0" style="animation-delay:0.76s" xml:space="preserve" dominant-baseline="text-before-edge">                 +s##s:``:-=-*csc+=+-`...`s##*cc=                   </text>
+  <text class="r" x="28.6" y="330.0" style="animation-delay:0.8s" xml:space="preserve" dominant-baseline="text-before-edge">                  *ss#c:`:-+--*sc+---``.`+##s+-.                    </text>
+  <text class="r" x="28.6" y="343.0" style="animation-delay:0.84s" xml:space="preserve" dominant-baseline="text-before-edge">                   ..*#s--::-=*cc+-::---:c##+=                      </text>
+  <text class="r" x="28.6" y="356.0" style="animation-delay:0.88s" xml:space="preserve" dominant-baseline="text-before-edge">                      .=-:=+++s##c==+*+:.*s=.                       </text>
+  <text class="r" x="28.6" y="369.0" style="animation-delay:0.92s" xml:space="preserve" dominant-baseline="text-before-edge">                         ``:=cs#s**++=:. c#+.                       </text>
+  <text class="r" x="28.6" y="382.0" style="animation-delay:0.96s" xml:space="preserve" dominant-baseline="text-before-edge">                       .+-``:-+c*+++=-::*#c-``                      </text>
+  <text class="r" x="28.6" y="395.0" style="animation-delay:1.0s" xml:space="preserve" dominant-baseline="text-before-edge">                      -s#+```-=******cc##s+:.`--=:`.                </text>
+  <text class="r" x="28.6" y="408.0" style="animation-delay:1.04s" xml:space="preserve" dominant-baseline="text-before-edge">                     `c#%c-::-=+**+ccccs*+-`:-*ss#ssc*=-:`.         </text>
+  <text class="r" x="28.6" y="421.0" style="animation-delay:1.08s" xml:space="preserve" dominant-baseline="text-before-edge">                   `::c%#c*-:=+==--+***+*-::-+s##scsssc*+=-:`.      </text>
+  <text class="r" x="28.6" y="434.0" style="animation-delay:1.12s" xml:space="preserve" dominant-baseline="text-before-edge">              .`:=----*#sc*+====-::--=++=::-+*s###ssscccc*++==-`    </text>
+  <text class="r" x="28.6" y="447.0" style="animation-delay:1.16s" xml:space="preserve" dominant-baseline="text-before-edge">           `=****=:=+=+*sc+===--::::-csc*=-=*###ssssscc**scc+-+=:   </text>
+  <text class="r" x="28.6" y="460.0" style="animation-delay:1.2s" xml:space="preserve" dominant-baseline="text-before-edge">         `=+**c*+=-++-+ss#c*++=-:-+c#%#####ccsssccsscc*+scc+csc+=:. </text>
+  <text class="r" x="28.6" y="473.0" style="animation-delay:1.24s" xml:space="preserve" dominant-baseline="text-before-edge">        -==*c**+*+=-+c****+cc*++cssc#ssssssccs***cc*+c*+s+c##s*----.</text>
 </svg>

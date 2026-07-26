@@ -8,7 +8,6 @@ PADDING_X = 28
 PADDING_Y = 24
 LINE_HEIGHT = 22
 LABEL_SPACING = 110
-TITLE_FONT_SIZE = 14
 TEXT_FONT_SIZE = 12
 SVG_WIDTH = 540
 BACKGROUND = "#0f172a"
@@ -66,69 +65,73 @@ def build_svg(static: bool = False) -> str:
     rows = CONTENT
     svg_height = PADDING_Y * 2 + len(rows) * LINE_HEIGHT
     lines = []
-    defs = []
-    duration = 0.45
     stagger = 0.05
 
     for index, (label, value) in enumerate(rows):
         y = PADDING_Y + index * LINE_HEIGHT
-        is_title = index == 0
-        text_color = TEXT_COLOR if value or label else SECONDARY
         x_label = PADDING_X
         x_value = PADDING_X + LABEL_SPACING
-        begin = f"{index * stagger}s"
-        if static:
-            label_anim = ""
-            value_anim = ""
-            opacity = "1"
-            transform = ""
-        else:
-            label_anim = (
-                f"<animate attributeName=\"opacity\" from=\"0\" to=\"1\" dur=\"0.25s\" begin=\"{begin}\" fill=\"freeze\" />"
-            )
-            value_anim = (
-                f"<animate attributeName=\"opacity\" from=\"0\" to=\"1\" dur=\"0.25s\" begin=\"{begin}\" fill=\"freeze\" />"
-            )
-            opacity = "0"
-            transform = f"transform=\"translate(-12,0)\""
+        delay = round(index * stagger, 3)
+
+        is_accent = label and not label.startswith('—') and label != '•'
+        label_fill = ACCENT if is_accent else TEXT_COLOR
+        if not value and not label:
+            label_fill = SECONDARY
 
         safe_label = escape(label)
         safe_value = escape(value)
+
+        if static:
+            cls = ""
+            style = ""
+        else:
+            cls = ' class="line"'
+            style = f' style="animation-delay:{delay}s"'
+
         label_text = (
-            f"  <text x=\"{x_label}\" y=\"{y}\" fill=\"{ACCENT if label and not label.startswith('—') and label != '•' else text_color}\" "
-            f"font-family=\"'JetBrains Mono', 'Courier New', monospace\" font-size=\"{TEXT_FONT_SIZE}px\" "
-            f"opacity=\"{opacity}\" {transform} xml:space=\"preserve\">{safe_label}</text>\n"
+            f'  <text{cls}{style} x="{x_label}" y="{y}" fill="{label_fill}" '
+            f'xml:space="preserve">{safe_label}</text>\n'
         )
 
         if value:
             value_text = (
-                f"  <text x=\"{x_value}\" y=\"{y}\" fill=\"{text_color}\" "
-                f"font-family=\"'JetBrains Mono', 'Courier New', monospace\" font-size=\"{TEXT_FONT_SIZE}px\" "
-                f"opacity=\"{opacity}\" {transform} xml:space=\"preserve\">{safe_value}</text>\n"
+                f'  <text{cls}{style} x="{x_value}" y="{y}" fill="{TEXT_COLOR}" '
+                f'xml:space="preserve">{safe_value}</text>\n'
             )
         else:
             value_text = ""
 
-        if not static:
-            label_text = label_text.replace("</text>", f"{label_anim}</text>")
-            if value_text:
-                value_text = value_text.replace("</text>", f"{value_anim}</text>")
-
         lines.append(label_text)
         lines.append(value_text)
 
+    animation_css = ""
+    if not static:
+        animation_css = (
+            '  .line { opacity: 0; animation: fadeIn 0.55s ease-out both; }\n'
+            '  @keyframes fadeIn { '
+            '0% { opacity: 0; transform: translateY(-6px); } '
+            '60% { opacity: 1; transform: translateY(1px); } '
+            '100% { opacity: 1; transform: translateY(0); } }\n'
+            '  @media (prefers-reduced-motion: reduce) { '
+            '.line { opacity: 1 !important; animation: none !important; } }\n'
+        )
+
     return (
-        f"<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n"
-        f"<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 {SVG_WIDTH} {svg_height}\" "
-        f"width=\"{SVG_WIDTH}\" height=\"{svg_height}\" xml:space=\"preserve\">\n"
-        f"  <style>\n"
-        f"    text {{ shape-rendering: crispEdges; }}\n"
-        f"  </style>\n"
-        f"  <rect x=\"0\" y=\"0\" width=\"100%\" height=\"100%\" fill=\"{BACKGROUND}\" rx=\"{RADIUS}\" ry=\"{RADIUS}\" stroke=\"{BORDER}\" stroke-width=\"1\" />\n"
-        f"  <g>\n"
+        f'<?xml version="1.0" encoding="UTF-8"?>\n'
+        f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {SVG_WIDTH} {svg_height}" '
+        f'width="{SVG_WIDTH}" height="{svg_height}" '
+        f'font-family="\'JetBrains Mono\', \'Courier New\', monospace" font-size="{TEXT_FONT_SIZE}px">\n'
+        f'<style>\n'
+        f'  text {{ shape-rendering: crispEdges; }}\n'
+        f'{animation_css}'
+        f'</style>\n'
+        f'<rect width="{SVG_WIDTH}" height="{svg_height}" fill="none" />\n'
+        f'<rect x="1" y="1" width="{SVG_WIDTH - 2}" height="{svg_height - 2}" '
+        f'fill="{BACKGROUND}" rx="{RADIUS}" ry="{RADIUS}" stroke="{BORDER}" stroke-width="1" />\n'
+        f'<g>\n'
         + "".join(lines)
-        + f"  </g>\n"
-        f"</svg>\n"
+        + f'</g>\n'
+        f'</svg>\n'
     )
 
 

@@ -9,14 +9,12 @@ RAMP = " .`:-=+*cs#%@"  # bright (sparse) -> dark (dense)
 DEFAULT_SOURCE = "source-prepped.png"
 DEFAULT_OUTPUT = "avi-ascii.svg"
 
-# Target card dimensions matching info-card.svg
 CARD_WIDTH = 540
-CARD_HEIGHT = 972
 BACKGROUND = "#0f172a"
 BORDER = "#334155"
 TEXT_COLOR = "#38bdf8"
-SECONDARY = "#94a3b8"
 ACCENT = "#e2e8f0"
+SECONDARY = "#94a3b8"
 
 
 def build_ascii_grid(gray_image: np.ndarray, width: int = 68) -> list[str]:
@@ -42,77 +40,66 @@ def make_svg_content(rows: list[str]) -> str:
     cols = len(rows[0]) if rows else 0
     char_width = 7.1
     line_height = 13.0
-    
+
     header_h = 60
     grid_width = cols * char_width
     grid_height = len(rows) * line_height
-    
+    card_height = int(header_h + grid_height + 40)
+
     offset_x = round((CARD_WIDTH - grid_width) / 2, 1)
-    offset_y = round(header_h + (CARD_HEIGHT - header_h - grid_height) / 2, 1)
+    offset_y = round(header_h + 10, 1)
 
-    total_duration = 0.75
-    row_delay = 0.04
-    cursor_width = 6
+    stagger = 0.04
 
-    def row_svg(row_index: int) -> str:
-        y = offset_y + row_index * line_height
-        begin = f"{round(row_index * row_delay, 2)}s"
-        animate = (
-            f"<animate attributeName=\"width\" from=\"0\" "
-            f"to=\"{round(grid_width, 1)}\" dur=\"{total_duration}s\" begin=\"{begin}\" fill=\"freeze\" />"
-        )
-        return (
-            f"  <clipPath id=\"clip-{row_index}\">\n"
-            f"    <rect x=\"{offset_x}\" y=\"{y}\" width=\"0\" height=\"{line_height}\">\n"
-            f"      {animate}\n"
-            f"    </rect>\n"
-            f"  </clipPath>\n"
-        )
-
-    rows_defs = [row_svg(i) for i in range(len(rows))]
-
-    def row_group(row_index: int, row_text: str) -> str:
-        y = offset_y + row_index * line_height
-        begin = f"{round(row_index * row_delay, 2)}s"
+    # Build text rows markup using CSS animation classes
+    text_rows = []
+    for i, row_text in enumerate(rows):
+        y = offset_y + i * line_height
+        delay = round(i * stagger, 3)
         safe_text = escape(row_text)
-        return (
-            f"  <g clip-path=\"url(#clip-{row_index})\">\n"
-            f"    <text x=\"{offset_x}\" y=\"{y}\" fill=\"{TEXT_COLOR}\" font-family=\"'JetBrains Mono', 'Courier New', monospace\" font-size=\"11px\" xml:space=\"preserve\" dominant-baseline=\"text-before-edge\">{safe_text}</text>\n"
-            f"    <rect x=\"{offset_x}\" y=\"{y}\" width=\"{cursor_width}\" height=\"{line_height}\" fill=\"{ACCENT}\" opacity=\"0.8\">\n"
-            f"      <animate attributeName=\"x\" from=\"{offset_x}\" to=\"{round(offset_x + grid_width, 1)}\" dur=\"{total_duration}s\" begin=\"{begin}\" fill=\"freeze\" />\n"
-            f"    </rect>\n"
-            f"  </g>\n"
+        text_rows.append(
+            f'  <text class="r" x="{offset_x}" y="{y}" '
+            f'style="animation-delay:{delay}s" '
+            f'xml:space="preserve" dominant-baseline="text-before-edge">{safe_text}</text>'
         )
 
-    rows_groups = [row_group(i, r) for i, r in enumerate(rows)]
-    rows_defs_text = "".join(rows_defs)
-    rows_groups_text = "".join(rows_groups)
-
-    header_markup = (
-        f"  <text x=\"28\" y=\"24\" fill=\"{ACCENT}\" font-family=\"'JetBrains Mono', 'Courier New', monospace\" font-size=\"12px\" xml:space=\"preserve\">ayush@ascii</text>\n"
-        f"  <text x=\"138\" y=\"24\" fill=\"{TEXT_COLOR}\" font-family=\"'JetBrains Mono', 'Courier New', monospace\" font-size=\"12px\" xml:space=\"preserve\">./render_portrait.py</text>\n"
-        f"  <text x=\"28\" y=\"46\" fill=\"{SECONDARY}\" font-family=\"'JetBrains Mono', 'Courier New', monospace\" font-size=\"12px\" xml:space=\"preserve\">──────────────────────────────────────────────</text>\n"
-    )
+    rows_markup = "\n".join(text_rows)
 
     return (
-        f"<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n"
-        f"<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 {CARD_WIDTH} {CARD_HEIGHT}\" "
-        f"width=\"{CARD_WIDTH}\" height=\"{CARD_HEIGHT}\" xml:space=\"preserve\">\n"
-        f"  <style>\n"
-        f"    text {{ shape-rendering: crispEdges; }}\n"
-        f"  </style>\n"
-        f"  <rect x=\"0\" y=\"0\" width=\"100%\" height=\"100%\" fill=\"{BACKGROUND}\" rx=\"16\" ry=\"16\" stroke=\"{BORDER}\" stroke-width=\"1\" />\n"
-        f"{header_markup}"
-        f"  <defs>\n"
-        f"{rows_defs_text}"
-        f"  </defs>\n"
-        f"{rows_groups_text}"
-        f"</svg>\n"
+        f'<?xml version="1.0" encoding="UTF-8"?>\n'
+        f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {CARD_WIDTH} {card_height}" '
+        f'width="{CARD_WIDTH}" height="{card_height}" '
+        f'font-family="\'JetBrains Mono\', \'Courier New\', monospace">\n'
+        f'<style>\n'
+        f'  .r {{ fill: {TEXT_COLOR}; font-size: 11px; opacity: 0; '
+        f'animation: fadeIn 0.5s ease-out both; }}\n'
+        f'  .hdr {{ fill: {ACCENT}; font-size: 12px; opacity: 0; '
+        f'animation: fadeIn 0.5s ease-out both; }}\n'
+        f'  .hdr2 {{ fill: {TEXT_COLOR}; font-size: 12px; opacity: 0; '
+        f'animation: fadeIn 0.5s ease-out both; animation-delay: 0.05s; }}\n'
+        f'  .sep {{ fill: {SECONDARY}; font-size: 12px; opacity: 0; '
+        f'animation: fadeIn 0.5s ease-out both; animation-delay: 0.1s; }}\n'
+        f'  @keyframes fadeIn {{ '
+        f'0% {{ opacity: 0; transform: translateY(-6px); }} '
+        f'60% {{ opacity: 1; transform: translateY(1px); }} '
+        f'100% {{ opacity: 1; transform: translateY(0); }} }}\n'
+        f'  @media (prefers-reduced-motion: reduce) {{ '
+        f'.r, .hdr, .hdr2, .sep {{ opacity: 1 !important; animation: none !important; }} }}\n'
+        f'</style>\n'
+        f'<rect width="{CARD_WIDTH}" height="{card_height}" fill="none" />\n'
+        f'<rect x="1" y="1" width="{CARD_WIDTH - 2}" height="{card_height - 2}" '
+        f'fill="{BACKGROUND}" rx="16" ry="16" stroke="{BORDER}" stroke-width="1" />\n'
+        f'<text class="hdr" x="28" y="24" xml:space="preserve">ayush@ascii</text>\n'
+        f'<text class="hdr2" x="138" y="24" xml:space="preserve">./render_portrait.py</text>\n'
+        f'<text class="sep" x="28" y="46" xml:space="preserve">'
+        f'──────────────────────────────────────────────</text>\n'
+        f'{rows_markup}\n'
+        f'</svg>\n'
     )
 
 
 def main() -> int:
-    parser = argparse.ArgumentParser(description="Render a self-typing ASCII SVG from a prepped grayscale image.")
+    parser = argparse.ArgumentParser(description="Render ASCII portrait SVG from a prepped grayscale image.")
     parser.add_argument(
         "--source",
         default=DEFAULT_SOURCE,
