@@ -1,204 +1,128 @@
+"""
+Build a neofetch-style info card SVG to sit to the RIGHT of the ASCII portrait.
+Terminal chrome (traffic-light dots) + gradient background + SMIL slide-in.
+"""
+import html
 import os
-import argparse
-from pathlib import Path
-from xml.sax.saxutils import escape
 
-SVG_WIDTH = 490
-PADDING_X = 20
-TITLE_BAR_H = 30
-LINE_HEIGHT = 20.5
-LABEL_X = 112
-RADIUS = 12
+HERE = os.path.dirname(os.path.abspath(__file__))
+OUT = os.path.join(HERE, "..", "info-card.svg")
+STATIC = bool(os.environ.get("STATIC"))
 
-# GitHub dark theme colors (matching reference)
-BG_TOP = "#111722"
-BG_BOTTOM = "#0d1117"
-BORDER = "#30363d"
-TITLE_COLOR = "#7d8590"
-NAME_GREEN = "#3fb950"
-NAME_CYAN = "#22d3ee"
-LABEL_ORANGE = "#ffa657"
-TEXT_LIGHT = "#c9d1d9"
-SECTION_BLUE = "#58a6ff"
-BULLET_GREEN = "#3fb950"
-DIM = "#7d8590"
+W, H = 480, 520
+PAD = 20
+TITLEBAR_H = 30
+KEY_X = PAD
+VAL_X = PAD + 92
+LINE_H = 20.5
 
-# Content rows: (type, label, value)
-#   type: "header", "kv", "section", "bullet", "blank"
-CONTENT = [
-    ("header", "", ""),
+BG = "#0d1117"
+BG2 = "#111722"
+FRAME = "#30363d"
+MUTED = "#7d8590"
+INK = "#c9d1d9"
+KEY = "#ffa657"
+SECTION = "#58a6ff"
+GREEN = "#3fb950"
+ACCENT = "#22d3ee"
+
+ROWS = [
+    ("host",),
     ("kv", "Now", "B.Tech ECE @ IIIT Kota"),
     ("kv", "Focus", "Software Development & DSA"),
     ("kv", "Seeking", "SDE Internship '27"),
     ("kv", "Location", "Rajasthan, India"),
-    ("kv", "Edu", "B.Tech Electronics & Communication"),
-    ("kv", "", "Indian Institute of Information Technology Kota"),
-    ("blank", "", ""),
-    ("section", "— Stack", ""),
+    ("gap",),
+    ("sec", "Stack"),
     ("kv", "Languages", "C++, C, Python, JavaScript"),
     ("kv", "Frontend", "HTML, CSS, React, Tailwind, Vite"),
     ("kv", "Backend", "Node.js, Express.js"),
     ("kv", "Database", "Firebase, Supabase"),
-    ("kv", "Tools", "Git, GitHub, Android Studio, VS Code"),
+    ("kv", "Tools", "Git, GitHub, Android Studio, Figma"),
     ("kv", "Learning", "System Design, SQL, Next.js"),
-    ("blank", "", ""),
-    ("section", "— Projects", ""),
-    ("kv", "Featured", "Campus Companion"),
-    ("kv", "", "DHWANI (BFSK Acoustic Communication)"),
-    ("kv", "", "Bluetooth Mesh Emergency System"),
-    ("blank", "", ""),
-    ("section", "— CP", ""),
-    ("kv", "LeetCode", "DSA & Problem Solving"),
-    ("kv", "CodeChef", "★ 1115 Rating"),
-    ("kv", "Focus", "Arrays • Hashing • Sliding Window"),
-    ("kv", "", "Bit Manipulation • STL"),
-    ("blank", "", ""),
-    ("section", "— Highlights", ""),
-    ("bullet", "", "Lead Designer @ Neon Cinematics"),
-    ("bullet", "", "Content Lead @ GDG Genesys"),
-    ("bullet", "", "2+ Years Freelance Graphic Designer"),
-    ("bullet", "", "Building real-world software projects"),
+    ("gap",),
+    ("sec", "Projects"),
+    ("bul", "Campus Companion"),
+    ("bul", "DHWANI (BFSK Acoustic Communication)"),
+    ("bul", "Bluetooth Mesh Emergency System"),
+    ("gap",),
+    ("sec", "Highlights"),
+    ("bul", "Lead Designer @ Neon Cinematics"),
+    ("bul", "Content Lead @ GDG Genesys"),
+    ("bul", "2+ Years Freelance Graphic Designer"),
+    ("bul", "Building real-world software projects"),
 ]
 
-STAGGER = 0.06
+
+def esc(s):
+    return html.escape(s)
 
 
-def build_svg(static: bool = False) -> str:
-    y_cursor = TITLE_BAR_H + 15
-    elements = []
-    row_index = 0
-
-    for row_type, label, value in CONTENT:
-        delay = round(row_index * STAGGER + 0.15, 2)
-        anim_cls = "" if static else ' class="row"'
-        anim_style = "" if static else f' style="animation-delay:{delay}s"'
-
-        if row_type == "header":
-            # avi@github header with colored segments + divider line
-            elements.append(
-                f'<g{anim_cls}{anim_style}>'
-                f'<text x="{PADDING_X}" y="{y_cursor}" font-size="14" font-weight="700">'
-                f'<tspan fill="{NAME_GREEN}">avi</tspan>'
-                f'<tspan fill="{DIM}">@</tspan>'
-                f'<tspan fill="{NAME_CYAN}">github</tspan></text>'
-                f'<line x1="{LABEL_X}" y1="{y_cursor - 4}" x2="{SVG_WIDTH - PADDING_X}" '
-                f'y2="{y_cursor - 4}" stroke="{BORDER}" stroke-opacity="0.8"/>'
-                f'</g>'
-            )
-            y_cursor += LINE_HEIGHT
-            row_index += 1
-
-        elif row_type == "kv":
-            safe_label = escape(label)
-            safe_value = escape(value)
-            parts = []
-            if label:
-                parts.append(
-                    f'<text x="{PADDING_X}" y="{y_cursor}" fill="{LABEL_ORANGE}" '
-                    f'font-size="12.5" font-weight="700">{safe_label}</text>'
-                )
-            if value:
-                vx = LABEL_X if label else LABEL_X
-                parts.append(
-                    f'<text x="{vx}" y="{y_cursor}" fill="{TEXT_LIGHT}" '
-                    f'font-size="12.5">{safe_value}</text>'
-                )
-            elements.append(f'<g{anim_cls}{anim_style}>{"".join(parts)}</g>')
-            y_cursor += LINE_HEIGHT
-            row_index += 1
-
-        elif row_type == "section":
-            y_cursor += 5  # extra spacing before section
-            safe_label = escape(label)
-            elements.append(
-                f'<g{anim_cls}{anim_style}>'
-                f'<text x="{PADDING_X}" y="{y_cursor}" fill="{SECTION_BLUE}" '
-                f'font-size="12.5" font-weight="700">{safe_label}</text>'
-                f'<line x1="{PADDING_X + 75}" y1="{y_cursor - 4}" '
-                f'x2="{SVG_WIDTH - PADDING_X}" y2="{y_cursor - 4}" '
-                f'stroke="{BORDER}" stroke-opacity="0.8"/>'
-                f'</g>'
-            )
-            y_cursor += LINE_HEIGHT
-            row_index += 1
-
-        elif row_type == "bullet":
-            safe_value = escape(value)
-            elements.append(
-                f'<g{anim_cls}{anim_style}>'
-                f'<circle cx="{PADDING_X + 3}" cy="{y_cursor - 4}" r="2.5" fill="{BULLET_GREEN}"/>'
-                f'<text x="{PADDING_X + 14}" y="{y_cursor}" fill="{TEXT_LIGHT}" '
-                f'font-size="12.5">{safe_value}</text>'
-                f'</g>'
-            )
-            y_cursor += LINE_HEIGHT
-            row_index += 1
-
-        elif row_type == "blank":
-            y_cursor += 10
-
-    svg_height = int(y_cursor + 20)
-
-    # Animation CSS
-    anim_css = ""
-    if not static:
-        anim_css = (
-            '  .row { opacity: 0; transform: translateY(5px); '
-            'animation: slideUp 0.4s ease-out both; }\n'
-            '  @keyframes slideUp { '
-            '0% { opacity: 0; transform: translateY(5px); } '
-            '100% { opacity: 1; transform: translateY(0); } }\n'
-            '  @media (prefers-reduced-motion: reduce) { '
-            '.row { opacity: 1 !important; animation: none !important; } }\n'
-        )
-
-    body = "\n".join(elements)
-
-    return (
-        f'<?xml version="1.0" encoding="UTF-8"?>\n'
-        f'<svg xmlns="http://www.w3.org/2000/svg" width="{SVG_WIDTH}" height="{svg_height}" '
-        f'viewBox="0 0 {SVG_WIDTH} {svg_height}" '
-        f'font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace">\n'
-        f'<defs>\n'
-        f'  <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">\n'
-        f'    <stop offset="0" stop-color="{BG_TOP}"/>\n'
-        f'    <stop offset="1" stop-color="{BG_BOTTOM}"/>\n'
-        f'  </linearGradient>\n'
-        f'</defs>\n'
-        f'<style>\n'
-        f'{anim_css}'
-        f'</style>\n'
-        f'<rect width="{SVG_WIDTH}" height="{svg_height}" rx="{RADIUS}" fill="url(#bg)"/>\n'
-        f'<rect x="0.5" y="0.5" width="{SVG_WIDTH - 1}" height="{svg_height - 1}" '
-        f'rx="{RADIUS}" fill="none" stroke="{BORDER}"/>\n'
-        f'<line x1="0" y1="{TITLE_BAR_H}" x2="{SVG_WIDTH}" y2="{TITLE_BAR_H}" stroke="{BORDER}"/>\n'
-        f'<circle cx="20" cy="15" r="5" fill="#ff5f56"/>\n'
-        f'<circle cx="36" cy="15" r="5" fill="#ffbd2e"/>\n'
-        f'<circle cx="52" cy="15" r="5" fill="#27c93f"/>\n'
-        f'<text x="{SVG_WIDTH / 2}" y="19" fill="{TITLE_COLOR}" font-size="12" '
-        f'text-anchor="middle">avi@github: ~$ neofetch</text>\n'
-        f'{body}\n'
-        f'</svg>\n'
-    )
+def rise(inner, i):
+    if STATIC:
+        return f"<g>{inner}</g>"
+    delay = 0.15 + i * 0.06
+    return (f'<g opacity="0" transform="translate(0,5)">{inner}'
+            f'<animate attributeName="opacity" from="0" to="1" begin="{delay:.2f}s" dur="0.4s" fill="freeze"/>'
+            f'<animateTransform attributeName="transform" type="translate" from="0 5" to="0 0" '
+            f'begin="{delay:.2f}s" dur="0.4s" fill="freeze" calcMode="spline" keySplines="0.2 0.8 0.2 1"/></g>')
 
 
-def main() -> int:
-    parser = argparse.ArgumentParser(description="Generate a neofetch-style info card SVG.")
-    parser.add_argument(
-        "--output",
-        default="info-card.svg",
-        help="Output SVG path (default: info-card.svg)",
-    )
-    args = parser.parse_args()
+y_cursor = TITLEBAR_H + 30
+parts = [
+    f'<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}" '
+    f'font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace">',
+    '<defs>'
+    f'<linearGradient id="ibg" x1="0" y1="0" x2="0" y2="1">'
+    f'<stop offset="0" stop-color="{BG2}"/><stop offset="1" stop-color="{BG}"/></linearGradient></defs>',
+    f'<rect width="{W}" height="{H}" rx="12" fill="url(#ibg)"/>',
+    f'<rect x="0.5" y="0.5" width="{W-1}" height="{H-1}" rx="12" fill="none" stroke="{FRAME}"/>',
+    f'<line x1="0" y1="{TITLEBAR_H}" x2="{W}" y2="{TITLEBAR_H}" stroke="{FRAME}"/>',
+]
+for i, dotcol in enumerate(["#ff5f56", "#ffbd2e", "#27c93f"]):
+    parts.append(f'<circle cx="{PAD + i*16}" cy="{TITLEBAR_H/2}" r="5" fill="{dotcol}"/>')
+parts.append(f'<text x="{W/2}" y="{TITLEBAR_H/2 + 4}" fill="{MUTED}" font-size="12" '
+             f'text-anchor="middle">avi@github: ~$ neofetch</text>')
 
-    static = os.environ.get("STATIC", "0") == "1"
-    svg_content = build_svg(static=static)
-    output_path = Path(args.output)
-    output_path.parent.mkdir(parents=True, exist_ok=True)
-    output_path.write_text(svg_content, encoding="utf-8")
-    print(f"Wrote info card to: {output_path} {'(static)' if static else '(animated)'}")
-    return 0
+for i, row in enumerate(ROWS):
+    kind = row[0]
+    if kind == "gap":
+        y_cursor += LINE_H * 0.5
+        continue
+    if kind == "host":
+        inner = (f'<text x="{KEY_X}" y="{y_cursor:.1f}" font-size="14" font-weight="700">'
+                 f'<tspan fill="{GREEN}">ayush</tspan><tspan fill="{MUTED}">@</tspan>'
+                 f'<tspan fill="{ACCENT}">github</tspan></text>'
+                 f'<line x1="{KEY_X+116}" y1="{y_cursor-4:.1f}" x2="{W-PAD}" y2="{y_cursor-4:.1f}" '
+                 f'stroke="{FRAME}" stroke-opacity="0.8"/>')
+    elif kind == "sec":
+        title = esc(row[1])
+        inner = (f'<text x="{KEY_X}" y="{y_cursor:.1f}" fill="{SECTION}" font-size="12.5" font-weight="700">'
+                 f'&#8212; {title}</text>'
+                 f'<line x1="{KEY_X + 12 + len(row[1])*8}" y1="{y_cursor-4:.1f}" x2="{W-PAD}" y2="{y_cursor-4:.1f}" '
+                 f'stroke="{FRAME}" stroke-opacity="0.8"/>')
+    elif kind == "kv":
+        key, val = esc(row[1]), esc(row[2])
+        inner = (f'<text x="{KEY_X}" y="{y_cursor:.1f}" fill="{KEY}" font-size="12.5" font-weight="700">{key}</text>'
+                 f'<text x="{VAL_X}" y="{y_cursor:.1f}" fill="{INK}" font-size="12.5">{val}</text>')
+    elif kind == "bul":
+        txt = esc(row[1])
+        inner = (f'<circle cx="{KEY_X+3}" cy="{y_cursor-4:.1f}" r="2.5" fill="{GREEN}"/>'
+                 f'<text x="{KEY_X+14}" y="{y_cursor:.1f}" fill="{INK}" font-size="12.5">{txt}</text>')
+    else:
+        continue
+    parts.append(rise(inner, i))
+    y_cursor += LINE_H
 
+# Auto-size height
+actual_h = int(y_cursor + 20)
+parts[0] = (f'<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{actual_h}" viewBox="0 0 {W} {actual_h}" '
+            f'font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace">')
+parts[2] = f'<rect width="{W}" height="{actual_h}" rx="12" fill="url(#ibg)"/>'
+parts[3] = f'<rect x="0.5" y="0.5" width="{W-1}" height="{actual_h-1}" rx="12" fill="none" stroke="{FRAME}"/>'
 
-if __name__ == "__main__":
-    raise SystemExit(main())
+parts.append("</svg>")
+svg = "".join(parts)
+with open(OUT, "w") as f:
+    f.write(svg)
+print("wrote", OUT, len(svg), "bytes;", W, "x", actual_h, "content_bottom", round(y_cursor))

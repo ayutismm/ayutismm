@@ -1,145 +1,135 @@
-import argparse
-from pathlib import Path
-from xml.sax.saxutils import escape
+"""
+Convert a portrait photo into a monochrome ASCII-art SVG that "types" itself in
+like a terminal, then holds. Uses SMIL clip-path animations + cursor wipe.
+Identical style to AVIVASHISHTA29 reference.
+"""
+from PIL import Image, ImageEnhance, ImageFilter
+import html
+import os
+import sys
 
-import cv2
-import numpy as np
+HERE = os.path.dirname(os.path.abspath(__file__))
+SRC = sys.argv[1] if len(sys.argv) > 1 else os.path.join(HERE, "..", "source-prepped.png")
+OUT = sys.argv[2] if len(sys.argv) > 2 else os.path.join(HERE, "..", "avi-ascii.svg")
 
-RAMP = " .`:-=+*cs#%@"  # bright (sparse) -> dark (dense)
-DEFAULT_SOURCE = "source-prepped.png"
-DEFAULT_OUTPUT = "avi-ascii.svg"
+COLS = 100
+ROWS = 53
+CELL_W = 8
+CELL_H = 15
+RAMP = " .`:-=+*cs#%@"
 
-CARD_WIDTH = 540
-BACKGROUND = "#0f172a"
-BORDER = "#334155"
-TEXT_COLOR = "#38bdf8"
-ACCENT = "#e2e8f0"
-SECONDARY = "#94a3b8"
+CONTRAST = 1.05
+BRIGHTNESS = 1.0
+GAMMA = 1.18
+SHARPEN = False
+WHITE_FLOOR = 0.80
 
+PAD = 20
+TITLEBAR_H = 30
+STATUS_H = 30
+ART_W = COLS * CELL_W
+ART_H = ROWS * CELL_H
+CANVAS_W = ART_W + PAD * 2
+CANVAS_H = TITLEBAR_H + ART_H + STATUS_H + PAD
 
-def build_ascii_grid(gray_image: np.ndarray, width: int = 68) -> list[str]:
-    height, original_width = gray_image.shape
-    aspect = height / original_width
-    char_aspect = 0.52
-    target_height = max(1, int(width * aspect * char_aspect))
-    resized = cv2.resize(gray_image, (width, target_height), interpolation=cv2.INTER_AREA)
+BG = "#0d1117"
+BG2 = "#111722"
+FRAME = "#30363d"
+TITLE_TEXT = "#7d8590"
+INK = "#c9d1d9"
+CURSOR = "#c9d1d9"
 
-    rows: list[str] = []
-    ramp_length = len(RAMP)
-    for y in range(resized.shape[0]):
-        row_chars = []
-        for x in range(resized.shape[1]):
-            value = int(resized[y, x])
-            index = int((255 - value) * (ramp_length - 1) / 255)
-            row_chars.append(RAMP[index])
-        rows.append("".join(row_chars))
-    return rows
+ROW_DUR = 0.11
+STAGGER = 0.11
 
+# ---- 1. sample image ----
+im = Image.open(SRC).convert("L")
+if SHARPEN:
+    im = im.filter(ImageFilter.UnsharpMask(radius=2, percent=140, threshold=2))
+im = ImageEnhance.Brightness(im).enhance(BRIGHTNESS)
+im = ImageEnhance.Contrast(im).enhance(CONTRAST)
+im = im.resize((COLS, ROWS), Image.LANCZOS)
+px = im.load()
 
-def make_svg_content(rows: list[str]) -> str:
-    cols = len(rows[0]) if rows else 0
-    char_width = 7.1
-    line_height = 13.0
+STATIC = bool(os.environ.get("STATIC"))
 
-    header_h = 60
-    grid_width = cols * char_width
-    grid_height = len(rows) * line_height
-    card_height = int(header_h + grid_height + 40)
+rows_txt = []
+for y in range(ROWS):
+    chars = []
+    for x in range(COLS):
+        lum = px[x, y] / 255.0
+        lum = pow(lum, GAMMA)
+        if lum >= WHITE_FLOOR:
+            chars.append(" ")
+            continue
+        idx = int((1.0 - lum) * (len(RAMP) - 1) + 0.5)
+        idx = max(0, min(len(RAMP) - 1, idx))
+        chars.append(RAMP[idx])
+    rows_txt.append("".join(chars))
 
-    offset_x = round((CARD_WIDTH - grid_width) / 2, 1)
-    offset_y = round(header_h + 10, 1)
+art_top = TITLEBAR_H + PAD * 0.35
 
-    stagger = 0.04
+# ---- 2. assemble SVG ----
+parts = []
+parts.append(
+    f'<svg xmlns="http://www.w3.org/2000/svg" width="{CANVAS_W}" height="{CANVAS_H}" '
+    f'viewBox="0 0 {CANVAS_W} {CANVAS_H}" font-family="ui-monospace, SFMono-Regular, '
+    f'Menlo, Consolas, monospace">'
+)
+parts.append('<defs>'
+             f'<linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">'
+             f'<stop offset="0" stop-color="{BG2}"/><stop offset="1" stop-color="{BG}"/>'
+             f'</linearGradient></defs>')
 
-    # Build text rows markup using CSS animation classes
-    text_rows = []
-    for i, row_text in enumerate(rows):
-        y = offset_y + i * line_height
-        delay = round(i * stagger, 3)
-        safe_text = escape(row_text)
-        text_rows.append(
-            f'  <text class="r" x="{offset_x}" y="{y}" '
-            f'style="animation-delay:{delay}s" '
-            f'xml:space="preserve" dominant-baseline="text-before-edge">{safe_text}</text>'
-        )
+parts.append(f'<rect width="{CANVAS_W}" height="{CANVAS_H}" rx="12" fill="url(#bg)"/>')
+parts.append(f'<rect x="0.5" y="0.5" width="{CANVAS_W-1}" height="{CANVAS_H-1}" rx="12" '
+             f'fill="none" stroke="{FRAME}" stroke-width="1"/>')
 
-    rows_markup = "\n".join(text_rows)
+parts.append(f'<line x1="0" y1="{TITLEBAR_H}" x2="{CANVAS_W}" y2="{TITLEBAR_H}" stroke="{FRAME}"/>')
+for i, dotcol in enumerate(["#ff5f56", "#ffbd2e", "#27c93f"]):
+    parts.append(f'<circle cx="{PAD + i*16}" cy="{TITLEBAR_H/2}" r="5" fill="{dotcol}"/>')
+parts.append(f'<text x="{CANVAS_W/2}" y="{TITLEBAR_H/2 + 4}" fill="{TITLE_TEXT}" font-size="12" '
+             f'text-anchor="middle">avi@github: ~$ ./portrait.sh</text>')
 
-    return (
-        f'<?xml version="1.0" encoding="UTF-8"?>\n'
-        f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {CARD_WIDTH} {card_height}" '
-        f'width="{CARD_WIDTH}" height="{card_height}" '
-        f'font-family="\'JetBrains Mono\', \'Courier New\', monospace">\n'
-        f'<style>\n'
-        f'  .r {{ fill: {TEXT_COLOR}; font-size: 11px; opacity: 0; '
-        f'animation: fadeIn 0.5s ease-out both; }}\n'
-        f'  .hdr {{ fill: {ACCENT}; font-size: 12px; opacity: 0; '
-        f'animation: fadeIn 0.5s ease-out both; }}\n'
-        f'  .hdr2 {{ fill: {TEXT_COLOR}; font-size: 12px; opacity: 0; '
-        f'animation: fadeIn 0.5s ease-out both; animation-delay: 0.05s; }}\n'
-        f'  .sep {{ fill: {SECONDARY}; font-size: 12px; opacity: 0; '
-        f'animation: fadeIn 0.5s ease-out both; animation-delay: 0.1s; }}\n'
-        f'  @keyframes fadeIn {{ '
-        f'0% {{ opacity: 0; transform: translateY(-6px); }} '
-        f'60% {{ opacity: 1; transform: translateY(1px); }} '
-        f'100% {{ opacity: 1; transform: translateY(0); }} }}\n'
-        f'  @media (prefers-reduced-motion: reduce) {{ '
-        f'.r, .hdr, .hdr2, .sep {{ opacity: 1 !important; animation: none !important; }} }}\n'
-        f'</style>\n'
-        f'<rect width="{CARD_WIDTH}" height="{card_height}" fill="none" />\n'
-        f'<rect x="1" y="1" width="{CARD_WIDTH - 2}" height="{card_height - 2}" '
-        f'fill="{BACKGROUND}" rx="16" ry="16" stroke="{BORDER}" stroke-width="1" />\n'
-        f'<text class="hdr" x="28" y="24" xml:space="preserve">ayush@ascii</text>\n'
-        f'<text class="hdr2" x="138" y="24" xml:space="preserve">./render_portrait.py</text>\n'
-        f'<text class="sep" x="28" y="46" xml:space="preserve">'
-        f'──────────────────────────────────────────────</text>\n'
-        f'{rows_markup}\n'
-        f'</svg>\n'
+font_size = CELL_H * 0.86
+for ry, line in enumerate(rows_txt):
+    y = art_top + ry * CELL_H + CELL_H * 0.74
+    row_y = art_top + ry * CELL_H
+    delay = ry * STAGGER
+    safe = html.escape(line)
+    text = (f'<text xml:space="preserve" x="{PAD}" y="{y:.1f}" fill="{INK}" '
+            f'font-size="{font_size:.1f}" textLength="{ART_W}" lengthAdjust="spacing">{safe}</text>')
+
+    if STATIC:
+        parts.append(text)
+        continue
+
+    parts.append(
+        f'<clipPath id="r{ry}"><rect x="{PAD}" y="{row_y:.1f}" height="{CELL_H}" width="0">'
+        f'<animate attributeName="width" from="0" to="{ART_W}" begin="{delay:.3f}s" '
+        f'dur="{ROW_DUR:.2f}s" fill="freeze"/></rect></clipPath>'
+    )
+    parts.append(f'<g clip-path="url(#r{ry})">{text}</g>')
+    parts.append(
+        f'<rect y="{row_y+1:.1f}" width="{CELL_W}" height="{CELL_H-2}" fill="{CURSOR}" opacity="0">'
+        f'<animate attributeName="x" from="{PAD}" to="{PAD+ART_W}" begin="{delay:.3f}s" '
+        f'dur="{ROW_DUR:.2f}s" fill="freeze"/>'
+        f'<set attributeName="opacity" to="0.85" begin="{delay:.3f}s"/>'
+        f'<set attributeName="opacity" to="0" begin="{delay+ROW_DUR:.3f}s"/></rect>'
     )
 
+# status bar with blinking cursor
+status_line_y = TITLEBAR_H + ART_H + PAD * 0.35
+status_y = status_line_y + 19
+parts.append(f'<line x1="0" y1="{status_line_y:.1f}" x2="{CANVAS_W}" y2="{status_line_y:.1f}" stroke="{FRAME}"/>')
+parts.append(f'<text x="{PAD}" y="{status_y:.1f}" fill="{TITLE_TEXT}" font-size="13">'
+             f'avi@github:~$ whoami <tspan fill="{INK}">Ayush Singh</tspan></text>')
+parts.append(f'<rect x="{PAD+228}" y="{status_y-12:.1f}" width="8" height="14" fill="{INK}">'
+             f'<animate attributeName="opacity" values="1;1;0;0" keyTimes="0;0.5;0.51;1" '
+             f'dur="1s" repeatCount="indefinite"/></rect>')
 
-def main() -> int:
-    parser = argparse.ArgumentParser(description="Render ASCII portrait SVG from a prepped grayscale image.")
-    parser.add_argument(
-        "--source",
-        default=DEFAULT_SOURCE,
-        help=f"Path to the prepped grayscale source image (default: {DEFAULT_SOURCE})",
-    )
-    parser.add_argument(
-        "--output",
-        default=DEFAULT_OUTPUT,
-        help=f"Path to output SVG file (default: {DEFAULT_OUTPUT})",
-    )
-    parser.add_argument(
-        "--width",
-        type=int,
-        default=68,
-        help="Character grid width in columns (default: 68)",
-    )
-    args = parser.parse_args()
-
-    source_path = Path(args.source)
-    if not source_path.exists():
-        print(f"Source image not found: {source_path}")
-        return 2
-
-    image = cv2.imread(str(source_path), cv2.IMREAD_GRAYSCALE)
-    if image is None:
-        print(f"Unable to read source image: {source_path}")
-        return 3
-
-    rows = build_ascii_grid(image, width=args.width)
-    if not rows:
-        print("Built no ASCII rows from image.")
-        return 4
-
-    svg_content = make_svg_content(rows)
-    output_path = Path(args.output)
-    output_path.parent.mkdir(parents=True, exist_ok=True)
-    output_path.write_text(svg_content, encoding="utf-8")
-    print(f"Wrote SVG to: {output_path}")
-    return 0
-
-
-if __name__ == "__main__":
-    raise SystemExit(main())
+parts.append("</svg>")
+svg = "".join(parts)
+with open(OUT, "w") as f:
+    f.write(svg)
+print("wrote", OUT, len(svg), "bytes;", CANVAS_W, "x", CANVAS_H)
